@@ -9,7 +9,7 @@
 
 > **The central rule: assemble the reviewers before assembling the course.**
 >
-> Before drafting lessons, actually spawn independent subagents to challenge the brief, evidence, scope, prerequisites, and assessment plan. Keep independent review throughout production. Do not write the course alone and add a fictional “review team” afterward.
+> In the default `STRICT_TEAM` mode, before drafting lessons actually spawn independent subagents to challenge the brief, evidence, scope, prerequisites, and assessment plan. Keep independent review throughout production. Do not write the course alone and add a fictional “review team” afterward. An explicitly authorized `REDUCED_ASSURANCE` path is available when a real team cannot be formed; it must be labeled as a preview.
 
 **Navigate:** [Start](#quick-start) · [Master instructions](#master-instructions) · [Team](#team) · [Gates](#gates) · [Lesson standard](#lesson-standard) · [Role prompts](#agent-prompts) · [Platform notes](#platform-notes) · [Release](#release)
 
@@ -26,7 +26,9 @@ Put this file in the working directory or attach it to the agent conversation. G
 
 ```text
 Follow HOW_TO_MAKE_COURSE.md to build a complete course on [TOPIC].
-Use a real agent team and pass the adversarial pre-authoring gates first.
+Use STRICT_TEAM and pass the adversarial pre-authoring gates first. If real
+subagents are unavailable, stop with a capability report; do not downgrade
+without my explicit authorization.
 Deliver the complete repository as a ZIP, including review and validation evidence.
 ```
 
@@ -40,6 +42,18 @@ Preserve and incorporate the relevant work already provided.
 Spawn the independent reviewers before planning or writing the course.
 Deliver all teaching material, practice, solutions, applicable local runtime,
 and actual verification evidence in one final ZIP.
+```
+
+### Optional reduced-assurance prompt
+
+Use this only when a real team is unavailable or the user intentionally accepts
+the lower assurance level:
+
+```text
+I explicitly authorize REDUCED_ASSURANCE for this build. Follow section 4.5,
+continue with available research and checks, and label the result
+PREVIEW: REDUCED-ASSURANCE. Do not invent a team or describe self-review as
+independent review. Report any runtime checks that were not run.
 ```
 
 The agent should infer reasonable, reversible defaults for omitted preferences, record them, and proceed. It must not infer access to missing files, a paid course, an external account, a model service, or a runtime that it has not checked.
@@ -65,19 +79,28 @@ You are the Course Lead, responsible for a complete, original learning product.
 Your job is to orchestrate a team, integrate its work, and release only what
 its evidence supports. Do not substitute an outline for the requested course.
 
+ASSURANCE MODE
+Default to STRICT_TEAM. Use REDUCED_ASSURANCE only when the user explicitly
+authorizes it. The reduced path in section 4.5 permits useful work to continue,
+but cannot qualify for a READY release or claim independent review. In that
+path, replace agent-specific assignments and approvals below with documented
+self-review and available evidence checks; never describe those as independent.
+
 FIRST ACTIONS
 1. Read the user request and inspect the minimum inputs needed to delegate.
    Check the actual tools and permissions available. Do not draft a syllabus
    or lessons alone while calling that work “preparation.”
-2. Actually spawn the early team described in section 4. It must include
-   separate subject-matter and learner/assessment adversaries.
-3. Give them the raw brief, relevant source pointers, and explicit review
-   contracts. Record real runtime handles or invocation references.
-4. Obtain their initial independent risk assessments, then collaboratively
-   research and design the course. Pass G0 and G1 before writing a lesson.
-5. When native subagent execution is unavailable, do not impersonate a team.
-   Record BLOCKED_NO_SUBAGENTS and return the capability report and handoff
-   materials. Do not silently downgrade the requested process to solo mode.
+2. In STRICT_TEAM mode, actually spawn the early team described in section 4.
+   It must include separate subject-matter and learner/assessment adversaries.
+   In REDUCED_ASSURANCE mode, follow section 4.5 and record the authorization.
+3. When using agents, give them the raw brief, relevant source pointers, and
+   explicit review contracts. Record real runtime handles or invocation refs.
+4. In STRICT_TEAM mode, obtain the independent risk assessments, then
+   collaboratively research and design the course. In REDUCED_ASSURANCE mode,
+   document the lead's risk review. Pass G0 and G1 before writing a lesson.
+5. When native subagent execution is unavailable in STRICT_TEAM mode, do not
+   impersonate a team. Record BLOCKED_NO_SUBAGENTS and return the capability
+   report and handoff materials. Do not silently downgrade to solo mode.
 
 BUILD
 6. Establish measurable outcomes, prerequisite dependencies, evidence rules,
@@ -155,11 +178,11 @@ These are defaults, not permission to override an explicit user constraint. Lear
 ---
 
 <a id="team"></a>
-## 4. Form a real team before content production
+## 4. Select an assurance mode before content production
 
-### 4.1 Minimum viable team
+### 4.1 Minimum viable team for STRICT_TEAM
 
-The minimum is the Course Lead plus **three separately invoked subagents**:
+The strict minimum is the Course Lead plus **three separately invoked subagents**:
 
 | Role | Early responsibility | Later responsibility |
 |---|---|---|
@@ -184,7 +207,7 @@ Use the following six subagent roles when capacity and task size justify it. The
 
 R, T, L, and Q should begin independent work in parallel wherever the runtime supports it. A and P join once design approval exists. For a small course, merge R/A/P and L/Q as in the minimum team. Keep the truth adversary separate.
 
-If the platform can invoke separate agents only serially, record `serialized_subagents`, not `parallel_team`. Do not claim that this satisfies an explicit parallel-team requirement. Preserve a handoff or obtain authorization for that reduced mode.
+If the platform can invoke separate agents only serially, record `serialized_subagents`, not `parallel_team`. Do not claim that this satisfies an explicit parallel-team requirement. If parallel work was explicitly required, preserve a handoff or obtain authorization for serialized execution.
 
 ### 4.3 Actual spawning, not roleplay
 
@@ -210,7 +233,33 @@ Before broad research, probe what is actually available: file access, source ret
 
 Do not install tools, connect accounts, change permissions, expose services, or provision paid infrastructure just to satisfy the plan without authorization. Use available discovery mechanisms before declaring a capability unavailable.
 
-When subagents are genuinely unavailable, create `reviews/CAPABILITY_REPORT.md`, the unapproved brief, and `BUILD_STATE.json`. State the failed capability and preserve a precise restart instruction. **Do not generate fake review reports or quietly continue as a solo course factory.**
+When subagents are genuinely unavailable, create `reviews/CAPABILITY_REPORT.md`, the unapproved brief, and `BUILD_STATE.json`. State the failed capability and preserve a precise restart instruction. In `STRICT_TEAM` mode, stop there unless the user explicitly authorizes the reduced path below. **Do not generate fake review reports or quietly continue as a solo course factory.**
+
+### 4.5 Explicit REDUCED_ASSURANCE path
+
+This path is an opt-in for a user who accepts that a real independent team is
+unavailable or out of scope. Record the user's authorization and the capability
+or scope reason in `BUILD_STATE.json`. Set `assurance_mode` to
+`REDUCED_ASSURANCE` and `actual_team_mode` to `single_agent` (or the actual
+available mode). Never create fictional agent handles, receipts, approvals, or
+independent review reports.
+
+Continue the research, design, authoring, tests, source checks, and package
+verification that are feasible. The lead may run a fresh-context adversarial
+self-review when supported, but record it as `SELF_REVIEW`, disclose that it is
+not independent, and do not treat it as an external approval. Any real human or
+external review can be recorded separately with its actual scope and evidence.
+Reduced assurance waives only the independent-team criteria; it does not waive
+correctness, safety, source-rights, required runtime, or artifact checks.
+
+For each gate, document unmet strict-team criteria and the checks actually
+completed. A gate may use `PASS_WITH_LIMITATIONS` only when its non-review
+criteria pass and the remaining limitations are explicitly listed. That status
+authorizes work only within this opt-in path and never counts as a strict-team
+pass. A substantive unresolved blocker still makes the build `BLOCKED / INCOMPLETE`.
+Reduced-assurance work cannot receive a `READY` label; use
+`PREVIEW: REDUCED-ASSURANCE`, adding `RUNTIME-UNVERIFIED` when required runtime
+behavior was not executed.
 
 ---
 
@@ -297,12 +346,13 @@ Only record observable findings, decisions, citations, tool outputs, and concise
 
 A gate is an evidence-backed decision authorizing the next phase. A report titled `PASS` is insufficient: it must identify the reviewed revision, criteria, reviewer references, findings, and evidence.
 
-Content gates can authorize continued preparation without certifying unrun runtime behavior. For G4 and G5, evaluate the declared release label explicitly. Missing required execution blocks a ready release; a separate, clearly recorded preview-packaging decision may authorize delivery of useful work. It must preserve the blocked or unrun checks rather than changing them to `PASS`.
+Content gates can authorize continued preparation without certifying unrun runtime behavior. The G0–G5 criteria below describe `STRICT_TEAM`. In explicitly authorized `REDUCED_ASSURANCE` mode, section 4.5 replaces the team and independent-review criteria with disclosed self-review at every gate; all substantive content, source, correctness, safety, required-runtime, and package checks still apply. Use `PASS_WITH_LIMITATIONS` when its conditions are met; this never counts as a strict-team pass. For G4 and G5, evaluate the declared release label explicitly. Missing required execution blocks a ready release; a separate, clearly recorded preview-packaging decision may authorize delivery of useful work. It must preserve the blocked or unrun checks rather than changing them to `PASS`.
 
 ### G0: Team and brief preflight
 
-**Allowed:** capability checks, input inventory, brief normalization, independent risk reviews.  
-**Forbidden:** solo syllabus construction, lesson authoring, full environment implementation.
+**Allowed in STRICT_TEAM:** capability checks, input inventory, brief normalization, independent risk reviews.
+
+**Forbidden in STRICT_TEAM:** solo syllabus construction, lesson authoring, full environment implementation. The explicitly authorized reduced path follows section 4.5.
 
 The early team inspects the raw request. T questions the domain assumptions and access claims. L questions learner fit and assessment feasibility. Q, or L in minimum mode, checks tool/runtime feasibility. R identifies what source discovery is needed.
 
@@ -360,16 +410,18 @@ Publish the archive's external checksum and validation summary. Do not edit an a
 {
   "gate": "G1",
   "status": "NOT_RUN",
+  "assurance_mode": "STRICT_TEAM",
   "input_revision": null,
   "reviewer_invocation_refs": [],
   "criteria": [],
   "blocking_finding_ids": [],
+  "limitations": [],
   "evidence_paths": [],
   "authorized_next_phase": null
 }
 ```
 
-Allowed gate statuses are `NOT_RUN`, `IN_PROGRESS`, `PASS`, `FAIL`, and `BLOCKED`. These are deliberately separate from test statuses. A gate file must never be filled with example approval data and mistaken for a real receipt.
+Allowed gate statuses are `NOT_RUN`, `IN_PROGRESS`, `PASS`, `PASS_WITH_LIMITATIONS`, `FAIL`, and `BLOCKED`. `PASS_WITH_LIMITATIONS` is reserved for explicitly authorized reduced-assurance work and must list the unmet criteria. These are deliberately separate from test statuses. A gate file must never be filled with example approval data and mistaken for a real receipt.
 
 ---
 
@@ -679,9 +731,9 @@ Do not create Docker, SQL, or empty placeholder directories for a subject that d
 
 ### 11.1 Manifest requirements
 
-The manifest should identify the course version, baseline, outcome IDs, lesson order and prerequisites, activity and solution paths, assessment IDs, capstone, validation entry points, and asset classifications.
+The manifest should identify the course version, learner and subject baseline, outcome IDs, lesson order and prerequisites, activity and solution paths, assessment IDs, capstone, validation entry points, and asset classifications. Classify each bundled non-lesson input such as datasets, images, and fixtures as `original`, `user_supplied`, `third_party_redistributable`, or `generated`; include its license and source references where applicable. Do not list restricted material as a distributable asset.
 
-The builder should validate that referenced files exist and that every core outcome has teaching and assessment coverage. A manifest is a navigation and traceability tool, not a substitute for checking the actual content.
+The builder should validate that referenced files exist, asset rights are recorded, capstone references resolve, and every core outcome has teaching and assessment coverage. A manifest is a navigation and traceability tool, not a substitute for checking the actual content.
 
 ### 11.2 Prior-work preservation
 
@@ -834,12 +886,13 @@ Choose a label that matches the evidence, not the user's desired adjective. A fa
 
 | Release label | Required meaning |
 |---|---|
-| **READY: CONTENT-REVIEWED** | The core course and assessments passed independent content and instructional review; no required runtime is unverified. This is not a claim of human learning validation. |
-| **READY: CONTENT-AND-RUNTIME-VERIFIED** | Content review passed and all required executable paths passed the declared runtime and clean-start checks. |
-| **PREVIEW: RUNTIME-UNVERIFIED** | Content and available static checks passed, but required runtime behavior was not executed. It must not be described as a fully tested runnable course. |
-| **BLOCKED / INCOMPLETE** | Required team execution, content, safety, major repairs, or other mandatory criteria remain unresolved. |
+| **READY: CONTENT-REVIEWED** | Strict-team content and instructional reviews passed, and the course has no required executable runtime. Use this label only for non-runtime courses; it is not a claim of human learning validation. |
+| **READY: CONTENT-AND-RUNTIME-VERIFIED** | Strict-team content and instructional reviews passed, and every required executable path passed its declared runtime and clean-start checks. Use this label when the course requires runtime execution. |
+| **PREVIEW: RUNTIME-UNVERIFIED** | Strict-team content and instructional reviews passed, but required runtime behavior was not executed. It must not be described as a fully tested runnable course. |
+| **PREVIEW: REDUCED-ASSURANCE** | The user explicitly authorized the reduced path, so strict independent-team review criteria were not met. Report completed checks and limitations; append `RUNTIME-UNVERIFIED` if required runtime behavior was not executed. |
+| **BLOCKED / INCOMPLETE** | Required strict-team execution when that mode was selected, core content, safety, major repairs, or other mandatory criteria remain unresolved. |
 
-A nontechnical course can use the content-reviewed label with runtime checks marked not applicable. A software course cannot use it to conceal missing required execution. Real learner evaluation may be recorded additionally, with participant consent, method, sample size, and limitations when relevant.
+These labels are mutually exclusive: content-reviewed is for courses with no required runtime; content-and-runtime-verified is for courses whose required runtime checks passed; runtime-unverified is for strict-team courses whose content review passed but required runtime was not run. When both reduced assurance and unverified required runtime apply, use `PREVIEW: REDUCED-ASSURANCE; RUNTIME-UNVERIFIED`. Reduced-assurance builds cannot use either READY label. Real learner evaluation may be recorded additionally, with participant consent, method, sample size, and limitations when relevant.
 
 ### Before packaging
 
@@ -1060,12 +1113,13 @@ runtime:
   external_dependencies: []
   authorized_external_spend: 0
 team:
-  requested_mode: parallel_team
-  minimum_distinct_subagents: 3
+  assurance_mode: STRICT_TEAM # REDUCED_ASSURANCE requires explicit user authorization
+  requested_mode: parallel_team # reduced_assurance only after explicit opt-in
+  minimum_distinct_subagents: 3 # Required only in STRICT_TEAM mode; use 0 for single_agent
   max_active_subagents: 6
 verification:
-  independent_truth_review: true
-  independent_learning_review: true
+  independent_truth_review: true # false only in authorized REDUCED_ASSURANCE mode
+  independent_learning_review: true # false only in authorized REDUCED_ASSURANCE mode
   runtime_required_for_ready: false
   packaged_artifact_check: true
 release:
@@ -1084,6 +1138,11 @@ Set runtime fields according to the course. `false` in this illustrative skeleto
   "course_slug": "example-course",
   "course_version": "0.1.0",
   "spec_revision": "spec-v1",
+  "baseline": {
+    "learner_starting_level": "Basic SQL; replace with the actual entry level.",
+    "knowledge_prerequisites": ["Basic SELECT queries"],
+    "version_scope": ["REPLACE_WITH_VERSION_OR_STABLE_SCOPE"]
+  },
   "outcomes": [
     {"id": "O01", "description": "Replace with an observable skill."}
   ],
@@ -1108,6 +1167,21 @@ Set runtime fields according to the course. `false` in this illustrative skeleto
       "rubric": "assessments/rubrics/01_topic.md"
     }
   ],
+  "capstone": {
+    "id": "C01",
+    "path": "docs/capstone/README.md",
+    "outcome_ids": ["O01"],
+    "rubric": "docs/capstone/rubric.md"
+  },
+  "assets": [
+    {
+      "path": "data/sample.csv",
+      "classification": "original",
+      "license": "REPLACE_WITH_ACTUAL_LICENSE_OR_UNDECIDED",
+      "rights_status": "REPLACE_WITH_ACTUAL_REDISTRIBUTION_STATUS",
+      "source_refs": []
+    }
+  ],
   "validation_entry_points": [],
   "release_label": "BLOCKED / INCOMPLETE"
 }
@@ -1119,6 +1193,7 @@ Set runtime fields according to the course. `false` in this illustrative skeleto
 {
   "state_version": 1,
   "phase": "PREFLIGHT",
+  "assurance_mode": "STRICT_TEAM",
   "spec_revision": null,
   "actual_team_mode": null,
   "team_record": "reviews/team.json",
@@ -1127,7 +1202,7 @@ Set runtime fields according to the course. `false` in this illustrative skeleto
   "open_findings": [],
   "pending_tasks": [],
   "capability_limitations": [],
-  "next_action": "Probe capabilities and invoke the early review team."
+  "next_action": "Probe capabilities; invoke the early team or follow the explicitly authorized reduced path."
 }
 ```
 
@@ -1144,50 +1219,61 @@ The following is **pseudocode**, not a working SDK or a claim that these functio
 capabilities = inspect_actual_environment()
 brief = normalize_only_what_is_needed_to_delegate(user_request)
 
-if not capabilities.real_subagents:
-    write_capability_report_and_resume_state()
-    return BLOCKED_NO_SUBAGENTS
-
-# Invocations here must be real runtime operations.
-researcher = invoke_agent(R, brief)
-truth_adversary = invoke_agent(T, brief)
-learner_adversary = invoke_agent(L, brief)
-release_verifier = invoke_agent(Q, brief)  # May merge with L in minimum mode.
-record_actual_invocation_receipts()
-
-initial_reports = collect_early_reports()
-require_gate(G0, initial_reports)
-
-proposal = assign_and_collect(researcher, RESEARCH_AND_DESIGN)
-independent_reviews = review_design_with(T, L, Q, proposal)
-resolve_findings_and_recheck(independent_reviews)
-require_gate(G1, current_design_revision)
-
-# Only now may lesson authoring and practical implementation begin.
-author, practice_builder = assign_real_build_workers()
-pilot = build_one_complete_lesson(author, practice_builder)
-review_and_test(pilot, T, L, Q)
-require_gate(G2, pilot_revision)
-
-for batch in dependency_safe_batches():
-    completed_units = delegate_bounded_tasks(batch)
-    independently_review_and_test(completed_units)
-    resolve_findings_and_recheck(completed_units)
-    accept_only_passing_modules(G3)
-
-integrate_course()
-run_whole_course_reviews_and_applicable_tests()
-
-if all_ready_release_criteria_pass:
-    require_release_candidate_gate(G4)
-    release_mode = READY
-elif only_required_runtime_execution_is_unavailable_and_content_is_accepted:
-    preserve_blocked_ready_criteria()
-    record_preview_packaging_authorization()
-    release_mode = PREVIEW_RUNTIME_UNVERIFIED
+if assurance_mode == REDUCED_ASSURANCE:
+    if not user_explicitly_authorized:
+        return BLOCKED_PENDING_AUTHORIZATION
+    write_capability_report_and_reduced_assurance_state()
+    run_reduced_assurance_gates_and_checks()
+    if unresolved_blockers:
+        return BLOCKED_OR_INCOMPLETE
+    release_mode = PREVIEW_REDUCED_ASSURANCE
+    if required_runtime_unverified:
+        release_mode += RUNTIME_UNVERIFIED
 else:
-    package_honest_incomplete_handoff_if_useful()
-    return BLOCKED_OR_INCOMPLETE
+    if not capabilities.real_subagents:
+        write_capability_report_and_resume_state()
+        return BLOCKED_NO_SUBAGENTS
+
+    # Invocations here must be real runtime operations.
+    researcher = invoke_agent(R, brief)
+    truth_adversary = invoke_agent(T, brief)
+    learner_adversary = invoke_agent(L, brief)
+    release_verifier = invoke_agent(Q, brief)  # May merge with L in minimum mode.
+    record_actual_invocation_receipts()
+
+    initial_reports = collect_early_reports()
+    require_gate(G0, initial_reports)
+
+    proposal = assign_and_collect(researcher, RESEARCH_AND_DESIGN)
+    independent_reviews = review_design_with(T, L, Q, proposal)
+    resolve_findings_and_recheck(independent_reviews)
+    require_gate(G1, current_design_revision)
+
+    # Only now may lesson authoring and practical implementation begin.
+    author, practice_builder = assign_real_build_workers()
+    pilot = build_one_complete_lesson(author, practice_builder)
+    review_and_test(pilot, T, L, Q)
+    require_gate(G2, pilot_revision)
+
+    for batch in dependency_safe_batches():
+        completed_units = delegate_bounded_tasks(batch)
+        independently_review_and_test(completed_units)
+        resolve_findings_and_recheck(completed_units)
+        accept_only_passing_modules(G3)
+
+    integrate_course()
+    run_whole_course_reviews_and_applicable_tests()
+
+    if all_ready_release_criteria_pass:
+        require_release_candidate_gate(G4)
+        release_mode = READY
+    elif only_required_runtime_execution_is_unavailable_and_content_is_accepted:
+        preserve_blocked_ready_criteria()
+        record_preview_packaging_authorization()
+        release_mode = PREVIEW_RUNTIME_UNVERIFIED
+    else:
+        package_honest_incomplete_handoff_if_useful()
+        return BLOCKED_OR_INCOMPLETE
 
 candidate = freeze_revision()
 archive = package(candidate)
@@ -1276,8 +1362,8 @@ Observed documentation destination: `https://learn.chatgpt.com/docs/agent-config
 <a id="acceptance"></a>
 ## 22. Final acceptance test for a course built with this guide
 
-A conforming ready release has real early team invocations; independent pre-authoring reviews; a clear outcome and evidence map; a reviewed complete pilot; substantive core lessons; meaningful practice, hints, and worked solutions; independent assessment checks; a useful capstone; an applicable safe environment; coherent navigation; source and rights traceability; resolved consequential defects; truthful validation records; and a verified packaged artifact.
+A conforming `READY` release uses `STRICT_TEAM` and has real early team invocations; independent pre-authoring reviews; a clear outcome and evidence map; a reviewed complete pilot; substantive core lessons; meaningful practice, hints, and worked solutions; independent assessment checks; a useful capstone; an applicable safe environment; coherent navigation; source and rights traceability; resolved consequential defects; truthful validation records; and a verified packaged artifact.
 
-A preview or blocked handoff may contain valuable work, but it must identify which of those requirements remain unmet.
+A reduced-assurance preview or blocked handoff may contain valuable work, but it must identify which requirements remain unmet and must not imply independent review.
 
 **A simple prompt starts the process. A real team, explicit teaching contracts, independent challenges, and inspectable evidence determine whether the result is ready.**
