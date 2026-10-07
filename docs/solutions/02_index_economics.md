@@ -29,7 +29,7 @@ The SQL checks logical outcomes or demonstrates an alternative. It deliberately 
 
 ## Primary references
 
-- [sql createindex](https://www.postgresql.org/docs/17/sql-createindex.html)
-- [storage hot](https://www.postgresql.org/docs/17/storage-hot.html)
-- [routine vacuuming](https://www.postgresql.org/docs/17/routine-vacuuming.html)
-- [monitoring stats](https://www.postgresql.org/docs/17/monitoring-stats.html)
+- [sql createindex](https://www.postgresql.org/docs/18/sql-createindex.html)
+- [storage hot](https://www.postgresql.org/docs/18/storage-hot.html)
+- [routine vacuuming](https://www.postgresql.org/docs/18/routine-vacuuming.html)
+- [monitoring stats](https://www.postgresql.org/docs/18/monitoring-stats.html)

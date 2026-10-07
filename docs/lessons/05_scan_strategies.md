@@ -1,6 +1,6 @@
 # 05. Scan Strategies
 
-**Prerequisite:** the preceding lessons, especially their DoneContracts. **Environment:** PostgreSQL 17, disposable course database. **Evidence:** actual plans and result checks, not prescribed timings.
+**Prerequisite:** the preceding lessons, especially their DoneContracts. **Environment:** PostgreSQL 18, disposable course database. **Evidence:** actual plans and result checks, not prescribed timings.
 
 [Course map](../01_course_map.md) · [SQL lab](../../sql/labs/05_scan_strategies.sql) · [Worked answers](../solutions/05_scan_strategies.md)
 
@@ -64,7 +64,7 @@ Record your hypothesis, result, and explanation with [the experiment template](.
 
 ## Primary references
 
-- [using explain](https://www.postgresql.org/docs/17/using-explain.html)
-- [indexes bitmap scans](https://www.postgresql.org/docs/17/indexes-bitmap-scans.html)
-- [runtime config query](https://www.postgresql.org/docs/17/runtime-config-query.html)
-- [indexes ordering](https://www.postgresql.org/docs/17/indexes-ordering.html)
+- [using explain](https://www.postgresql.org/docs/18/using-explain.html)
+- [indexes bitmap scans](https://www.postgresql.org/docs/18/indexes-bitmap-scans.html)
+- [runtime config query](https://www.postgresql.org/docs/18/runtime-config-query.html)
+- [indexes ordering](https://www.postgresql.org/docs/18/indexes-ordering.html)

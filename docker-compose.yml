@@ -1,7 +1,11 @@
 name: advanced-sql-course
 services:
   postgres:
-    image: ${POSTGRES_IMAGE:-postgres:17-bookworm}
+    build:
+      context: .
+      args:
+        POSTGRES_BASE_IMAGE: ${POSTGRES_IMAGE:-postgres:18-bookworm}
+    image: advanced-sql-course:local
     environment:
       POSTGRES_USER: course
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-course_local_only}
@@ -9,8 +13,6 @@ services:
       POSTGRES_INITDB_ARGS: "--encoding=UTF8 --locale=C --data-checksums"
       TZ: UTC
       PGTZ: UTC
-    ports:
-      - "127.0.0.1:${POSTGRES_PORT:-55432}:5432"
     shm_size: "256mb"
     command:
       - postgres
@@ -35,11 +37,9 @@ services:
       - -c
       - timezone=UTC
     volumes:
-      - postgres_data:/var/lib/postgresql/data
-      - ./docker/init:/docker-entrypoint-initdb.d:ro
-      - ./sql:/course/sql:ro
-      - ./scripts:/course/scripts:ro
-      - ./legacy:/course/legacy:ro
+      # PostgreSQL 18 uses a versioned PGDATA under this parent directory.
+      # Keep this volume separate from any existing PostgreSQL 17 volume.
+      - postgres18_data:/var/lib/postgresql
     healthcheck:
       test:
         - CMD-SHELL
@@ -52,4 +52,4 @@ services:
       retries: 60
       start_period: 15s
 volumes:
-  postgres_data:
+  postgres18_data:

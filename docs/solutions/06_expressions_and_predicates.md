@@ -29,7 +29,7 @@ The SQL checks logical outcomes or demonstrates an alternative. It deliberately 
 
 ## Primary references
 
-- [indexes expressional](https://www.postgresql.org/docs/17/indexes-expressional.html)
-- [datatype datetime](https://www.postgresql.org/docs/17/datatype-datetime.html)
-- [functions datetime](https://www.postgresql.org/docs/17/functions-datetime.html)
-- [sql createindex](https://www.postgresql.org/docs/17/sql-createindex.html)
+- [indexes expressional](https://www.postgresql.org/docs/18/indexes-expressional.html)
+- [datatype datetime](https://www.postgresql.org/docs/18/datatype-datetime.html)
+- [functions datetime](https://www.postgresql.org/docs/18/functions-datetime.html)
+- [sql createindex](https://www.postgresql.org/docs/18/sql-createindex.html)

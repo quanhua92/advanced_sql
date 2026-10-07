@@ -12,4 +12,4 @@ Before retaining an index, measure its size, inspect overlapping indexes, test r
 
 The decision should name the workload served, mechanism, evidence, costs, alternatives, and a condition for revisiting it. Use [the decision template](../templates/index_decision.md).
 
-Sources: [Indexes](https://www.postgresql.org/docs/17/indexes.html), [multicolumn indexes](https://www.postgresql.org/docs/17/indexes-multicolumn.html), [CREATE INDEX](https://www.postgresql.org/docs/17/sql-createindex.html), [HOT](https://www.postgresql.org/docs/17/storage-hot.html).
+Sources: [Indexes](https://www.postgresql.org/docs/18/indexes.html), [multicolumn indexes](https://www.postgresql.org/docs/18/indexes-multicolumn.html), [CREATE INDEX](https://www.postgresql.org/docs/18/sql-createindex.html), [HOT](https://www.postgresql.org/docs/18/storage-hot.html).

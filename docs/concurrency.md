@@ -88,4 +88,4 @@ The standard-library harness creates separate backend connections, coordinates s
 
 The harness was included but not executed in the preparation environment. Run it on the supplied PostgreSQL baseline before treating its checks as observed evidence. A successful schedule test covers that schedule, not every possible interleaving.
 
-Sources: [Transaction isolation](https://www.postgresql.org/docs/17/transaction-iso.html), [explicit locks](https://www.postgresql.org/docs/17/explicit-locking.html), [SELECT locking clauses](https://www.postgresql.org/docs/17/sql-select.html), [vacuum](https://www.postgresql.org/docs/17/routine-vacuuming.html).
+Sources: [Transaction isolation](https://www.postgresql.org/docs/18/transaction-iso.html), [explicit locks](https://www.postgresql.org/docs/18/explicit-locking.html), [SELECT locking clauses](https://www.postgresql.org/docs/18/sql-select.html), [vacuum](https://www.postgresql.org/docs/18/routine-vacuuming.html).

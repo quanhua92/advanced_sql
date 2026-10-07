@@ -29,7 +29,7 @@ The SQL checks logical outcomes or demonstrates an alternative. It deliberately 
 
 ## Primary references
 
-- [storage hot](https://www.postgresql.org/docs/17/storage-hot.html)
-- [routine vacuuming](https://www.postgresql.org/docs/17/routine-vacuuming.html)
-- [storage page layout](https://www.postgresql.org/docs/17/storage-page-layout.html)
-- [monitoring stats](https://www.postgresql.org/docs/17/monitoring-stats.html)
+- [storage hot](https://www.postgresql.org/docs/18/storage-hot.html)
+- [routine vacuuming](https://www.postgresql.org/docs/18/routine-vacuuming.html)
+- [storage page layout](https://www.postgresql.org/docs/18/storage-page-layout.html)
+- [monitoring stats](https://www.postgresql.org/docs/18/monitoring-stats.html)

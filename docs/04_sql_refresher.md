@@ -73,4 +73,4 @@ ROLLBACK;
 
 A transaction groups database effects and defines visibility/locking behavior. It is not a mechanism to hold a database connection throughout GPU inference. Parameterized application queries separate data values from query syntax. Table names and sort directions are not interchangeable with ordinary bound values; use an explicit allowlist when an application must select them dynamically.
 
-Sources: [SQL queries](https://www.postgresql.org/docs/17/queries.html), [CTEs](https://www.postgresql.org/docs/17/queries-with.html), [window functions](https://www.postgresql.org/docs/17/functions-window.html), [date/time types](https://www.postgresql.org/docs/17/datatype-datetime.html).
+Sources: [SQL queries](https://www.postgresql.org/docs/18/queries.html), [CTEs](https://www.postgresql.org/docs/18/queries-with.html), [window functions](https://www.postgresql.org/docs/18/functions-window.html), [date/time types](https://www.postgresql.org/docs/18/datatype-datetime.html).

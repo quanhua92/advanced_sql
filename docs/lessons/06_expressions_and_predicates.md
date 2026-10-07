@@ -1,6 +1,6 @@
 # 06. Expressions And Predicates
 
-**Prerequisite:** the preceding lessons, especially their DoneContracts. **Environment:** PostgreSQL 17, disposable course database. **Evidence:** actual plans and result checks, not prescribed timings.
+**Prerequisite:** the preceding lessons, especially their DoneContracts. **Environment:** PostgreSQL 18, disposable course database. **Evidence:** actual plans and result checks, not prescribed timings.
 
 [Course map](../01_course_map.md) · [SQL lab](../../sql/labs/06_expressions_and_predicates.sql) · [Worked answers](../solutions/06_expressions_and_predicates.md)
 
@@ -71,7 +71,7 @@ Record your hypothesis, result, and explanation with [the experiment template](.
 
 ## Primary references
 
-- [indexes expressional](https://www.postgresql.org/docs/17/indexes-expressional.html)
-- [datatype datetime](https://www.postgresql.org/docs/17/datatype-datetime.html)
-- [functions datetime](https://www.postgresql.org/docs/17/functions-datetime.html)
-- [sql createindex](https://www.postgresql.org/docs/17/sql-createindex.html)
+- [indexes expressional](https://www.postgresql.org/docs/18/indexes-expressional.html)
+- [datatype datetime](https://www.postgresql.org/docs/18/datatype-datetime.html)
+- [functions datetime](https://www.postgresql.org/docs/18/functions-datetime.html)
+- [sql createindex](https://www.postgresql.org/docs/18/sql-createindex.html)

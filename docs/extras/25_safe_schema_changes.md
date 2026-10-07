@@ -20,7 +20,7 @@ The lab's short lock timeout is a teaching guard. It can cause an intentional mi
 
 **DoneContract:** provide a migration runbook with lock, resource, validation, and rollback considerations, not just the target DDL.
 
-References: [CREATE INDEX](https://www.postgresql.org/docs/17/sql-createindex.html), [ALTER TABLE](https://www.postgresql.org/docs/17/sql-altertable.html), [progress reporting](https://www.postgresql.org/docs/17/progress-reporting.html), [DROP INDEX](https://www.postgresql.org/docs/17/sql-dropindex.html).
+References: [CREATE INDEX](https://www.postgresql.org/docs/18/sql-createindex.html), [ALTER TABLE](https://www.postgresql.org/docs/18/sql-altertable.html), [progress reporting](https://www.postgresql.org/docs/18/progress-reporting.html), [DROP INDEX](https://www.postgresql.org/docs/18/sql-dropindex.html).
 
 ## Run
 

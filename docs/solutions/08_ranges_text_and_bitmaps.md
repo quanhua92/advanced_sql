@@ -29,7 +29,7 @@ The SQL checks logical outcomes or demonstrates an alternative. It deliberately 
 
 ## Primary references
 
-- [indexes types](https://www.postgresql.org/docs/17/indexes-types.html)
-- [indexes opclass](https://www.postgresql.org/docs/17/indexes-opclass.html)
-- [indexes bitmap scans](https://www.postgresql.org/docs/17/indexes-bitmap-scans.html)
-- [pgtrgm](https://www.postgresql.org/docs/17/pgtrgm.html)
+- [indexes types](https://www.postgresql.org/docs/18/indexes-types.html)
+- [indexes opclass](https://www.postgresql.org/docs/18/indexes-opclass.html)
+- [indexes bitmap scans](https://www.postgresql.org/docs/18/indexes-bitmap-scans.html)
+- [pgtrgm](https://www.postgresql.org/docs/18/pgtrgm.html)

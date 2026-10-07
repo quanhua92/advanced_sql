@@ -29,7 +29,7 @@ The SQL checks logical outcomes or demonstrates an alternative. It deliberately 
 
 ## Primary references
 
-- [using explain](https://www.postgresql.org/docs/17/using-explain.html)
-- [indexes bitmap scans](https://www.postgresql.org/docs/17/indexes-bitmap-scans.html)
-- [runtime config query](https://www.postgresql.org/docs/17/runtime-config-query.html)
-- [indexes ordering](https://www.postgresql.org/docs/17/indexes-ordering.html)
+- [using explain](https://www.postgresql.org/docs/18/using-explain.html)
+- [indexes bitmap scans](https://www.postgresql.org/docs/18/indexes-bitmap-scans.html)
+- [runtime config query](https://www.postgresql.org/docs/18/runtime-config-query.html)
+- [indexes ordering](https://www.postgresql.org/docs/18/indexes-ordering.html)

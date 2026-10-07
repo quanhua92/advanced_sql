@@ -29,7 +29,7 @@ The SQL checks logical outcomes or demonstrates an alternative. It deliberately 
 
 ## Primary references
 
-- [storage page layout](https://www.postgresql.org/docs/17/storage-page-layout.html)
-- [btree](https://www.postgresql.org/docs/17/btree.html)
-- [pageinspect](https://www.postgresql.org/docs/17/pageinspect.html)
-- [indexes ordering](https://www.postgresql.org/docs/17/indexes-ordering.html)
+- [storage page layout](https://www.postgresql.org/docs/18/storage-page-layout.html)
+- [btree](https://www.postgresql.org/docs/18/btree.html)
+- [pageinspect](https://www.postgresql.org/docs/18/pageinspect.html)
+- [indexes ordering](https://www.postgresql.org/docs/18/indexes-ordering.html)

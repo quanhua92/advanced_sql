@@ -20,7 +20,7 @@ The queue capstone intentionally does not implement an application authorization
 
 **DoneContract:** verify a tenant policy with a non-bypassing role and state the authentication, context, and connection-pooling assumptions.
 
-References: [row security](https://www.postgresql.org/docs/17/ddl-rowsecurity.html), [CREATE POLICY](https://www.postgresql.org/docs/17/sql-createpolicy.html), [role attributes](https://www.postgresql.org/docs/17/role-attributes.html), [SET](https://www.postgresql.org/docs/17/sql-set.html).
+References: [row security](https://www.postgresql.org/docs/18/ddl-rowsecurity.html), [CREATE POLICY](https://www.postgresql.org/docs/18/sql-createpolicy.html), [role attributes](https://www.postgresql.org/docs/18/role-attributes.html), [SET](https://www.postgresql.org/docs/18/sql-set.html).
 
 ## Run
 

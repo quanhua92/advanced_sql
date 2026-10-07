@@ -14,8 +14,8 @@ BEGIN
   IF current_database()<>'advanced_sql' THEN
     RAISE EXCEPTION 'Teaching labs require database advanced_sql, not %',current_database();
   END IF;
-  IF current_setting('server_version_num')::integer/10000<>17 THEN
-    RAISE EXCEPTION 'This executable baseline requires PostgreSQL 17. Use a separate environment for other majors.';
+  IF current_setting('server_version_num')::integer/10000<>18 THEN
+    RAISE EXCEPTION 'This executable baseline requires PostgreSQL 18. Use a separate environment for other majors.';
   END IF;
   IF NOT COALESCE((SELECT ready FROM course_meta.installation WHERE id=1),false) THEN
     RAISE EXCEPTION 'Course installation is not ready';

@@ -1,6 +1,6 @@
 # 09. Partial Indexes And NULL
 
-**Prerequisite:** the preceding lessons, especially their DoneContracts. **Environment:** PostgreSQL 17, disposable course database. **Evidence:** actual plans and result checks, not prescribed timings.
+**Prerequisite:** the preceding lessons, especially their DoneContracts. **Environment:** PostgreSQL 18, disposable course database. **Evidence:** actual plans and result checks, not prescribed timings.
 
 [Course map](../01_course_map.md) · [SQL lab](../../sql/labs/09_partial_indexes_and_null.sql) · [Worked answers](../solutions/09_partial_indexes_and_null.md)
 
@@ -72,7 +72,7 @@ Record your hypothesis, result, and explanation with [the experiment template](.
 
 ## Primary references
 
-- [indexes partial](https://www.postgresql.org/docs/17/indexes-partial.html)
-- [functions comparisons](https://www.postgresql.org/docs/17/functions-comparisons.html)
-- [functions comparison](https://www.postgresql.org/docs/17/functions-comparison.html)
-- [ddl constraints](https://www.postgresql.org/docs/17/ddl-constraints.html)
+- [indexes partial](https://www.postgresql.org/docs/18/indexes-partial.html)
+- [functions comparisons](https://www.postgresql.org/docs/18/functions-comparisons.html)
+- [functions comparison](https://www.postgresql.org/docs/18/functions-comparison.html)
+- [ddl constraints](https://www.postgresql.org/docs/18/ddl-constraints.html)

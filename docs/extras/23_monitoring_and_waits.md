@@ -20,7 +20,7 @@ For the agent platform, separate queue delay, worker availability, connection ac
 
 **DoneContract:** build a workload observation with an explicit window and distinguish computation from waiting.
 
-References: [pg_stat_statements](https://www.postgresql.org/docs/17/pgstatstatements.html), [statistics views](https://www.postgresql.org/docs/17/monitoring-stats.html), [locks](https://www.postgresql.org/docs/17/explicit-locking.html).
+References: [pg_stat_statements](https://www.postgresql.org/docs/18/pgstatstatements.html), [statistics views](https://www.postgresql.org/docs/18/monitoring-stats.html), [locks](https://www.postgresql.org/docs/18/explicit-locking.html).
 
 ## Run
 

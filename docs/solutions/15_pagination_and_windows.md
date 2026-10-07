@@ -29,7 +29,7 @@ The SQL checks logical outcomes or demonstrates an alternative. It deliberately 
 
 ## Primary references
 
-- [queries limit](https://www.postgresql.org/docs/17/queries-limit.html)
-- [functions window](https://www.postgresql.org/docs/17/functions-window.html)
-- [tutorial window](https://www.postgresql.org/docs/17/tutorial-window.html)
-- [sql select](https://www.postgresql.org/docs/17/sql-select.html)
+- [queries limit](https://www.postgresql.org/docs/18/queries-limit.html)
+- [functions window](https://www.postgresql.org/docs/18/functions-window.html)
+- [tutorial window](https://www.postgresql.org/docs/18/tutorial-window.html)
+- [sql select](https://www.postgresql.org/docs/18/sql-select.html)

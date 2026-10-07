@@ -1,6 +1,6 @@
 # 17. Transactions And Isolation
 
-**Prerequisite:** the preceding lessons, especially their DoneContracts. **Environment:** PostgreSQL 17, disposable course database. **Evidence:** actual plans and result checks, not prescribed timings.
+**Prerequisite:** the preceding lessons, especially their DoneContracts. **Environment:** PostgreSQL 18, disposable course database. **Evidence:** actual plans and result checks, not prescribed timings.
 
 [Course map](../01_course_map.md) · [SQL lab](../../sql/labs/17_transactions_and_isolation.sql) · [Worked answers](../solutions/17_transactions_and_isolation.md)
 
@@ -70,7 +70,7 @@ Record your hypothesis, result, and explanation with [the experiment template](.
 
 ## Primary references
 
-- [transaction iso](https://www.postgresql.org/docs/17/transaction-iso.html)
-- [mvcc intro](https://www.postgresql.org/docs/17/mvcc-intro.html)
-- [explicit locking](https://www.postgresql.org/docs/17/explicit-locking.html)
-- [tutorial transactions](https://www.postgresql.org/docs/17/tutorial-transactions.html)
+- [transaction iso](https://www.postgresql.org/docs/18/transaction-iso.html)
+- [mvcc intro](https://www.postgresql.org/docs/18/mvcc-intro.html)
+- [explicit locking](https://www.postgresql.org/docs/18/explicit-locking.html)
+- [tutorial transactions](https://www.postgresql.org/docs/18/tutorial-transactions.html)

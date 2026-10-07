@@ -12,7 +12,7 @@ Start the database from [the root README](../README.md). Run the bootstrap check
 docker compose exec -T postgres psql -X -U course -d advanced_sql -v ON_ERROR_STOP=1 -f /course/sql/tests/bootstrap_check.sql
 ```
 
-Record `SELECT version()` and the seed count. The image tag tracks PostgreSQL 17 patch releases, so record its digest too when comparing runs over time. The package guards against silently running a different major version.
+Record `SELECT version()` and the seed count. The image tag tracks PostgreSQL 18 patch releases, so record its digest too when comparing runs over time. The package guards against silently running a different major version.
 
 ## The lesson loop
 

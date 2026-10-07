@@ -29,7 +29,7 @@ The SQL checks logical outcomes or demonstrates an alternative. It deliberately 
 
 ## Primary references
 
-- [queries table expressions](https://www.postgresql.org/docs/17/queries-table-expressions.html)
-- [using explain](https://www.postgresql.org/docs/17/using-explain.html)
-- [indexes multicolumn](https://www.postgresql.org/docs/17/indexes-multicolumn.html)
-- [sql select](https://www.postgresql.org/docs/17/sql-select.html)
+- [queries table expressions](https://www.postgresql.org/docs/18/queries-table-expressions.html)
+- [using explain](https://www.postgresql.org/docs/18/using-explain.html)
+- [indexes multicolumn](https://www.postgresql.org/docs/18/indexes-multicolumn.html)
+- [sql select](https://www.postgresql.org/docs/18/sql-select.html)

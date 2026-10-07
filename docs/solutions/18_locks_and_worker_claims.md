@@ -29,7 +29,7 @@ The SQL checks logical outcomes or demonstrates an alternative. It deliberately 
 
 ## Primary references
 
-- [explicit locking](https://www.postgresql.org/docs/17/explicit-locking.html)
-- [sql select](https://www.postgresql.org/docs/17/sql-select.html)
-- [monitoring stats](https://www.postgresql.org/docs/17/monitoring-stats.html)
-- [errcodes appendix](https://www.postgresql.org/docs/17/errcodes-appendix.html)
+- [explicit locking](https://www.postgresql.org/docs/18/explicit-locking.html)
+- [sql select](https://www.postgresql.org/docs/18/sql-select.html)
+- [monitoring stats](https://www.postgresql.org/docs/18/monitoring-stats.html)
+- [errcodes appendix](https://www.postgresql.org/docs/18/errcodes-appendix.html)

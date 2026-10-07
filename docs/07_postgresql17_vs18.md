@@ -1,17 +1,19 @@
-# PostgreSQL 17 baseline and version boundaries
+# PostgreSQL 18 baseline and version boundaries
 
-The experiments target PostgreSQL 17 and explicitly reject another major version. The `postgres:17-bookworm` tag selects a major-version image family, not an immutable image. Record the patch version and local image digest with evidence. For stricter reproducibility, set `POSTGRES_IMAGE` in your local `.env` to an official PostgreSQL 17 image pinned by its verified digest; do not copy a fabricated digest from an example.
+The executable course targets PostgreSQL 18 and rejects another major version. The `postgres:18-bookworm` tag follows PostgreSQL 18 patch releases rather than pinning one immutable build. Record `SELECT version()` and the local image digest with evidence. To pin an exact image, set `POSTGRES_IMAGE` in `.env` to a verified PostgreSQL 18 image reference; keep the major version at 18 because the data-volume layout and SQL guard are configured for it.
 
 ## B-tree skip scans
 
-PostgreSQL 18 documents B-tree skip scans, which can exploit later-column conditions by performing repeated searches under selected conditions. Therefore, “a multi-column index cannot ever help without its first column” is too absolute. Even on PostgreSQL 17, later-column conditions can be checked in an index and a planner may choose a broader index scan. Distinguish a narrow contiguous navigation range from any possible use of the index.
+PostgreSQL 18 can use B-tree skip scans when useful conditions constrain later index columns while earlier columns lack equality conditions. It performs repeated searches across values of the unconstrained key columns when the planner estimates that skipping groups costs less than scanning them. Low distinct counts in skipped columns make this more promising; the optimizer may choose a sequential scan or another index when that costs less.
 
-Skip scans do not change the index's logical ordering. An index ordered by `(project_id, status, created_at)` does not become globally ordered by creation time across several statuses merely because the engine can perform additional searches. Read the selected plan instead of transplanting a slogan between versions.
+The feature does not change the index's logical ordering. An index ordered by `(project_id, status, created_at)` does not provide one global creation-time order across several project or status groups. Inspect `EXPLAIN (ANALYZE, BUFFERS)` and its `Index Searches` count to see how PostgreSQL traversed an index. The count can also reflect `IN` values, repeated join probes, or other searches, so explain it in query context.
 
-## Do not upgrade by reusing the same volume
+PostgreSQL 17 and earlier can still scan a multicolumn index when only a later column is constrained, but cannot use the PostgreSQL 18 skip-scan optimization to avoid irrelevant key groups. Use the PG17 references only when comparing older behavior; the course examples and expected semantics target PG18.
 
-The official image's data-directory/volume conventions differ for PostgreSQL 18 and later versus the PostgreSQL 17 path used in this Compose file. More importantly, a major-version data directory cannot simply be opened by substituting a new server image. Use a planned major upgrade or a dump/restore into a new, separately initialized environment. Preserve the old volume until recovery is verified.
+## Separate major-version data
 
-This package does not include an automatic PostgreSQL 18 variant, and changing the image tag alone is not supported. You may create a separate comparison project after adapting its guards, volume layout, and expected behavior. Keep result sets and workload definitions comparable while documenting differences in optimizer capabilities.
+The official PostgreSQL 18 image stores `PGDATA` under `/var/lib/postgresql/18/docker` and uses `/var/lib/postgresql` as its volume mount. This course names its volume `postgres18_data`, keeping it separate from an existing PG17 volume. A major-version data directory must not be opened by substituting a different server image. Migrate deliberately with a tested dump/restore or `pg_upgrade` process, and keep the old volume until the new cluster is verified.
 
-Sources: [PG17 multicolumn indexes](https://www.postgresql.org/docs/17/indexes-multicolumn.html), [PG18 multicolumn indexes](https://www.postgresql.org/docs/18/indexes-multicolumn.html), [official image and data paths](https://hub.docker.com/_/postgres), [major-version upgrades](https://www.postgresql.org/docs/17/upgrading.html).
+The original learning-pack files under `legacy/` remain preserved as supplied. Their map describes the earlier PG17 plan; the legacy SQL lab is also runnable against PG18, while all maintained course chapters and executable checks target PG18.
+
+Sources: [PG17 multicolumn indexes](https://www.postgresql.org/docs/17/indexes-multicolumn.html), [PG18 multicolumn indexes](https://www.postgresql.org/docs/18/indexes-multicolumn.html), [PG18 EXPLAIN](https://www.postgresql.org/docs/18/using-explain.html), [official image and data paths](https://hub.docker.com/_/postgres), [PG18 major-version upgrades](https://www.postgresql.org/docs/18/upgrading.html).

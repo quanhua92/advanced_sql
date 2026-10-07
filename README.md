@@ -4,17 +4,17 @@
 
 **Start reading:** [Start here](docs/00_start_here.md) → [Course map](docs/01_course_map.md) → [Lesson 1](docs/lessons/01_pages_and_btrees.md).
 
-**Validation:** Read [VALIDATION.md](VALIDATION.md). The package received local static checks. Database execution, Docker startup, and runtime assertions could not be run in the preparation environment. Their executable test commands are included; no benchmark results are invented.
+**Validation:** Read [VALIDATION.md](VALIDATION.md). The full PostgreSQL smoke suite and real concurrency harness passed on PostgreSQL 18.6, alongside the offline package and CLI checks. No benchmark results are invented.
 
 ## 1. Start PostgreSQL
 
-Extract the ZIP, open a terminal in this `advanced_sql_complete` folder, and start Docker with Compose v2 available:
+Extract the ZIP, open a terminal in the `advanced_sql` folder, and start Docker with Compose v2 available:
 
 ```sh
-docker compose up -d --wait
+docker compose up -d --build --wait
 ```
 
-The first start downloads the official PostgreSQL image, creates a persistent volume, installs the included extensions, and seeds 500,000 synthetic runs. Readiness requires the seed-ready marker, not merely an open port. The image itself is **not inside the ZIP**; first startup needs internet access or an already-cached image. Initialization scripts run only when the data directory is empty.
+The first start builds a local image from the official PostgreSQL 18 image, creates a new `postgres18_data` volume, installs the included extensions, and seeds 500,000 synthetic runs. The image itself is **not inside the ZIP**; first startup needs internet access or an already-cached base image. Course files are copied into the image, so startup does not depend on host directory mounts. Initialization scripts run only when the data directory is empty. Existing PostgreSQL 17 data volumes are left untouched; a major-version upgrade requires a deliberate dump/restore or `pg_upgrade` procedure.
 
 Open a database terminal:
 
@@ -41,7 +41,7 @@ python scripts/course.py bonus 22
 python scripts/course.py capstone
 ```
 
-The helper saves these runs to `outputs/`. Run a solution after its matching lab. Each lab rebuilds only its own `labNN` schema; rerunning a lab discards your changes in that schema. The shared `course` dataset remains unchanged. Do not run/reset the same lesson concurrently.
+The helper copies the current `sql/`, `scripts/`, and `legacy/` folders into the container before running a command, then saves run logs to `outputs/`. Run a solution after its matching lab. Each lab rebuilds only its own `labNN` schema; rerunning a lab discards your changes in that schema. The shared `course` dataset remains unchanged. Do not run/reset the same lesson concurrently.
 
 ## 3. Check the installation and exercise the package
 
@@ -65,20 +65,20 @@ Manual concurrency schedules are in [the concurrency guide](docs/concurrency.md)
 
 | Setting | Local teaching value |
 |---|---|
-| Host / port | `127.0.0.1:55432` |
+| Access | `docker compose exec postgres psql -X -U course -d advanced_sql` |
 | Database | `advanced_sql` |
 | User | `course` |
 | Password | `course_local_only` |
-| Baseline | PostgreSQL 17, official `postgres:17-bookworm` image family |
+| Baseline | PostgreSQL 18, official `postgres:18-bookworm` image family |
 
-These credentials belong to a disposable, localhost-bound **teaching superuser**, not a production account. Do not expose the service publicly or load sensitive data. Optional overrides are documented in `.env.example`; defaults work without creating `.env`. Change a host-port conflict by copying `.env.example` to `.env` and changing `POSTGRES_PORT`. Changing the environment password does not change an already-initialized database role.
+These credentials belong to a disposable **teaching superuser**, not a production account. The database is not published on a host port; use `docker compose exec` so it does not conflict with a local PostgreSQL service. Do not load sensitive data. Optional image and password overrides are documented in `.env.example`; defaults work without creating `.env`. Changing the environment password does not change an already-initialized database role.
 
 ## 5. What is included
 
 ```text
-advanced_sql_complete/
+advanced_sql/
 ├── README.md, VALIDATION.md, CONTENTS.md
-├── docker-compose.yml, .env.example, Makefile
+├── .dockerignore, Dockerfile, docker-compose.yml, .env.example, Makefile
 ├── docker/init/                 First-start database bootstrap
 ├── docs/
 │   ├── lessons/                 21 complete teaching chapters

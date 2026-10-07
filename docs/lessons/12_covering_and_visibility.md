@@ -1,6 +1,6 @@
 # 12. Covering And Visibility
 
-**Prerequisite:** the preceding lessons, especially their DoneContracts. **Environment:** PostgreSQL 17, disposable course database. **Evidence:** actual plans and result checks, not prescribed timings.
+**Prerequisite:** the preceding lessons, especially their DoneContracts. **Environment:** PostgreSQL 18, disposable course database. **Evidence:** actual plans and result checks, not prescribed timings.
 
 [Course map](../01_course_map.md) · [SQL lab](../../sql/labs/12_covering_and_visibility.sql) · [Worked answers](../solutions/12_covering_and_visibility.md)
 
@@ -72,7 +72,7 @@ Record your hypothesis, result, and explanation with [the experiment template](.
 
 ## Primary references
 
-- [indexes index only scans](https://www.postgresql.org/docs/17/indexes-index-only-scans.html)
-- [pgvisibility](https://www.postgresql.org/docs/17/pgvisibility.html)
-- [storage vm](https://www.postgresql.org/docs/17/storage-vm.html)
-- [storage hot](https://www.postgresql.org/docs/17/storage-hot.html)
+- [indexes index only scans](https://www.postgresql.org/docs/18/indexes-index-only-scans.html)
+- [pgvisibility](https://www.postgresql.org/docs/18/pgvisibility.html)
+- [storage vm](https://www.postgresql.org/docs/18/storage-vm.html)
+- [storage hot](https://www.postgresql.org/docs/18/storage-hot.html)

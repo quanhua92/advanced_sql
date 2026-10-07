@@ -1,6 +1,6 @@
 # 02. Index Economics
 
-**Prerequisite:** the preceding lessons, especially their DoneContracts. **Environment:** PostgreSQL 17, disposable course database. **Evidence:** actual plans and result checks, not prescribed timings.
+**Prerequisite:** the preceding lessons, especially their DoneContracts. **Environment:** PostgreSQL 18, disposable course database. **Evidence:** actual plans and result checks, not prescribed timings.
 
 [Course map](../01_course_map.md) · [SQL lab](../../sql/labs/02_index_economics.sql) · [Worked answers](../solutions/02_index_economics.md)
 
@@ -71,7 +71,7 @@ Record your hypothesis, result, and explanation with [the experiment template](.
 
 ## Primary references
 
-- [sql createindex](https://www.postgresql.org/docs/17/sql-createindex.html)
-- [storage hot](https://www.postgresql.org/docs/17/storage-hot.html)
-- [routine vacuuming](https://www.postgresql.org/docs/17/routine-vacuuming.html)
-- [monitoring stats](https://www.postgresql.org/docs/17/monitoring-stats.html)
+- [sql createindex](https://www.postgresql.org/docs/18/sql-createindex.html)
+- [storage hot](https://www.postgresql.org/docs/18/storage-hot.html)
+- [routine vacuuming](https://www.postgresql.org/docs/18/routine-vacuuming.html)
+- [monitoring stats](https://www.postgresql.org/docs/18/monitoring-stats.html)

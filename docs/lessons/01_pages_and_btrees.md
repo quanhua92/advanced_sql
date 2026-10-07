@@ -1,6 +1,6 @@
 # 01. Pages And B-Trees
 
-**Prerequisite:** the setup guide and basic SELECT/JOIN syntax. **Environment:** PostgreSQL 17, disposable course database. **Evidence:** actual plans and result checks, not prescribed timings.
+**Prerequisite:** the setup guide and basic SELECT/JOIN syntax. **Environment:** PostgreSQL 18, disposable course database. **Evidence:** actual plans and result checks, not prescribed timings.
 
 [Course map](../01_course_map.md) · [SQL lab](../../sql/labs/01_pages_and_btrees.sql) · [Worked answers](../solutions/01_pages_and_btrees.md)
 
@@ -77,7 +77,7 @@ Record your hypothesis, result, and explanation with [the experiment template](.
 
 ## Primary references
 
-- [storage page layout](https://www.postgresql.org/docs/17/storage-page-layout.html)
-- [btree](https://www.postgresql.org/docs/17/btree.html)
-- [pageinspect](https://www.postgresql.org/docs/17/pageinspect.html)
-- [indexes ordering](https://www.postgresql.org/docs/17/indexes-ordering.html)
+- [storage page layout](https://www.postgresql.org/docs/18/storage-page-layout.html)
+- [btree](https://www.postgresql.org/docs/18/btree.html)
+- [pageinspect](https://www.postgresql.org/docs/18/pageinspect.html)
+- [indexes ordering](https://www.postgresql.org/docs/18/indexes-ordering.html)

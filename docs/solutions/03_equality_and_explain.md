@@ -29,7 +29,7 @@ The SQL checks logical outcomes or demonstrates an alternative. It deliberately 
 
 ## Primary references
 
-- [using explain](https://www.postgresql.org/docs/17/using-explain.html)
-- [sql explain](https://www.postgresql.org/docs/17/sql-explain.html)
-- [planner stats](https://www.postgresql.org/docs/17/planner-stats.html)
-- [monitoring stats](https://www.postgresql.org/docs/17/monitoring-stats.html)
+- [using explain](https://www.postgresql.org/docs/18/using-explain.html)
+- [sql explain](https://www.postgresql.org/docs/18/sql-explain.html)
+- [planner stats](https://www.postgresql.org/docs/18/planner-stats.html)
+- [monitoring stats](https://www.postgresql.org/docs/18/monitoring-stats.html)

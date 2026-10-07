@@ -1,6 +1,6 @@
 # 15. Pagination And Windows
 
-**Prerequisite:** the preceding lessons, especially their DoneContracts. **Environment:** PostgreSQL 17, disposable course database. **Evidence:** actual plans and result checks, not prescribed timings.
+**Prerequisite:** the preceding lessons, especially their DoneContracts. **Environment:** PostgreSQL 18, disposable course database. **Evidence:** actual plans and result checks, not prescribed timings.
 
 [Course map](../01_course_map.md) · [SQL lab](../../sql/labs/15_pagination_and_windows.sql) · [Worked answers](../solutions/15_pagination_and_windows.md)
 
@@ -74,7 +74,7 @@ Record your hypothesis, result, and explanation with [the experiment template](.
 
 ## Primary references
 
-- [queries limit](https://www.postgresql.org/docs/17/queries-limit.html)
-- [functions window](https://www.postgresql.org/docs/17/functions-window.html)
-- [tutorial window](https://www.postgresql.org/docs/17/tutorial-window.html)
-- [sql select](https://www.postgresql.org/docs/17/sql-select.html)
+- [queries limit](https://www.postgresql.org/docs/18/queries-limit.html)
+- [functions window](https://www.postgresql.org/docs/18/functions-window.html)
+- [tutorial window](https://www.postgresql.org/docs/18/tutorial-window.html)
+- [sql select](https://www.postgresql.org/docs/18/sql-select.html)

@@ -1,6 +1,6 @@
 # 16. Writes HOT And Vacuum
 
-**Prerequisite:** the preceding lessons, especially their DoneContracts. **Environment:** PostgreSQL 17, disposable course database. **Evidence:** actual plans and result checks, not prescribed timings.
+**Prerequisite:** the preceding lessons, especially their DoneContracts. **Environment:** PostgreSQL 18, disposable course database. **Evidence:** actual plans and result checks, not prescribed timings.
 
 [Course map](../01_course_map.md) · [SQL lab](../../sql/labs/16_writes_hot_and_vacuum.sql) · [Worked answers](../solutions/16_writes_hot_and_vacuum.md)
 
@@ -14,7 +14,7 @@ The lab contrasts two tables with identical row data and spare page space. One i
 
 ## HOT is conditional, not a synonym for a small update
 
-A heap-only tuple update can avoid adding fresh entries to ordinary indexes when no relevant indexed values change and the replacement tuple fits on the same heap page. PostgreSQL 17 has qualifications involving summarizing indexes such as BRIN; the useful rule is to inspect the actual index definitions and engine version, not say every index always blocks HOT.
+A heap-only tuple update can avoid adding fresh entries to ordinary indexes when no relevant indexed values change and the replacement tuple fits on the same heap page. PostgreSQL 18 has qualifications involving summarizing indexes such as BRIN; the useful rule is to inspect the actual index definitions and engine version, not say every index always blocks HOT.
 
 Changing an included column can matter even though it is not a search key. Expression-index inputs and partial-index predicate dependencies can matter too. A change to a column not visible in the projected dashboard may still affect an indexed expression or eligibility condition.
 
@@ -68,7 +68,7 @@ Record your hypothesis, result, and explanation with [the experiment template](.
 
 ## Primary references
 
-- [storage hot](https://www.postgresql.org/docs/17/storage-hot.html)
-- [routine vacuuming](https://www.postgresql.org/docs/17/routine-vacuuming.html)
-- [storage page layout](https://www.postgresql.org/docs/17/storage-page-layout.html)
-- [monitoring stats](https://www.postgresql.org/docs/17/monitoring-stats.html)
+- [storage hot](https://www.postgresql.org/docs/18/storage-hot.html)
+- [routine vacuuming](https://www.postgresql.org/docs/18/routine-vacuuming.html)
+- [storage page layout](https://www.postgresql.org/docs/18/storage-page-layout.html)
+- [monitoring stats](https://www.postgresql.org/docs/18/monitoring-stats.html)

@@ -1,6 +1,6 @@
 # 13. Heap And Clustering
 
-**Prerequisite:** the preceding lessons, especially their DoneContracts. **Environment:** PostgreSQL 17, disposable course database. **Evidence:** actual plans and result checks, not prescribed timings.
+**Prerequisite:** the preceding lessons, especially their DoneContracts. **Environment:** PostgreSQL 18, disposable course database. **Evidence:** actual plans and result checks, not prescribed timings.
 
 [Course map](../01_course_map.md) · [SQL lab](../../sql/labs/13_heap_and_clustering.sql) · [Worked answers](../solutions/13_heap_and_clustering.md)
 
@@ -64,7 +64,7 @@ Record your hypothesis, result, and explanation with [the experiment template](.
 
 ## Primary references
 
-- [sql cluster](https://www.postgresql.org/docs/17/sql-cluster.html)
-- [storage page layout](https://www.postgresql.org/docs/17/storage-page-layout.html)
-- [planner stats](https://www.postgresql.org/docs/17/planner-stats.html)
+- [sql cluster](https://www.postgresql.org/docs/18/sql-cluster.html)
+- [storage page layout](https://www.postgresql.org/docs/18/storage-page-layout.html)
+- [planner stats](https://www.postgresql.org/docs/18/planner-stats.html)
 - [innodb index types](https://dev.mysql.com/doc/refman/8.4/en/innodb-index-types.html)

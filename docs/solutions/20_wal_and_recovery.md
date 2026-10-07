@@ -29,8 +29,8 @@ The SQL checks logical outcomes or demonstrates an alternative. It deliberately 
 
 ## Primary references
 
-- [wal intro](https://www.postgresql.org/docs/17/wal-intro.html)
-- [wal internals](https://www.postgresql.org/docs/17/wal-internals.html)
-- [runtime config wal](https://www.postgresql.org/docs/17/runtime-config-wal.html)
-- [sql createtable](https://www.postgresql.org/docs/17/sql-createtable.html)
-- [backup](https://www.postgresql.org/docs/17/backup.html)
+- [wal intro](https://www.postgresql.org/docs/18/wal-intro.html)
+- [wal internals](https://www.postgresql.org/docs/18/wal-internals.html)
+- [runtime config wal](https://www.postgresql.org/docs/18/runtime-config-wal.html)
+- [sql createtable](https://www.postgresql.org/docs/18/sql-createtable.html)
+- [backup](https://www.postgresql.org/docs/18/backup.html)

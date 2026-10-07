@@ -18,7 +18,7 @@ For your platform, a project might heavily favor a model family, pool, or status
 
 **DoneContract:** identify a cardinality error caused by dependence or skew and justify a statistics change separately from an index change.
 
-References: [planner statistics](https://www.postgresql.org/docs/17/planner-stats.html), [CREATE STATISTICS](https://www.postgresql.org/docs/17/sql-createstatistics.html), [ANALYZE](https://www.postgresql.org/docs/17/sql-analyze.html).
+References: [planner statistics](https://www.postgresql.org/docs/18/planner-stats.html), [CREATE STATISTICS](https://www.postgresql.org/docs/18/sql-createstatistics.html), [ANALYZE](https://www.postgresql.org/docs/18/sql-analyze.html).
 
 ## Run
 

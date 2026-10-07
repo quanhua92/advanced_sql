@@ -29,7 +29,7 @@ The SQL checks logical outcomes or demonstrates an alternative. It deliberately 
 
 ## Primary references
 
-- [sql prepare](https://www.postgresql.org/docs/17/sql-prepare.html)
-- [runtime config query](https://www.postgresql.org/docs/17/runtime-config-query.html)
-- [protocol flow](https://www.postgresql.org/docs/17/protocol-flow.html)
-- [indexes partial](https://www.postgresql.org/docs/17/indexes-partial.html)
+- [sql prepare](https://www.postgresql.org/docs/18/sql-prepare.html)
+- [runtime config query](https://www.postgresql.org/docs/18/runtime-config-query.html)
+- [protocol flow](https://www.postgresql.org/docs/18/protocol-flow.html)
+- [indexes partial](https://www.postgresql.org/docs/18/indexes-partial.html)

@@ -1,6 +1,6 @@
 # 20. WAL And Recovery
 
-**Prerequisite:** the preceding lessons, especially their DoneContracts. **Environment:** PostgreSQL 17, disposable course database. **Evidence:** actual plans and result checks, not prescribed timings.
+**Prerequisite:** the preceding lessons, especially their DoneContracts. **Environment:** PostgreSQL 18, disposable course database. **Evidence:** actual plans and result checks, not prescribed timings.
 
 [Course map](../01_course_map.md) · [SQL lab](../../sql/labs/20_wal_and_recovery.sql) · [Worked answers](../solutions/20_wal_and_recovery.md)
 
@@ -68,8 +68,8 @@ Record your hypothesis, result, and explanation with [the experiment template](.
 
 ## Primary references
 
-- [wal intro](https://www.postgresql.org/docs/17/wal-intro.html)
-- [wal internals](https://www.postgresql.org/docs/17/wal-internals.html)
-- [runtime config wal](https://www.postgresql.org/docs/17/runtime-config-wal.html)
-- [sql createtable](https://www.postgresql.org/docs/17/sql-createtable.html)
-- [backup](https://www.postgresql.org/docs/17/backup.html)
+- [wal intro](https://www.postgresql.org/docs/18/wal-intro.html)
+- [wal internals](https://www.postgresql.org/docs/18/wal-internals.html)
+- [runtime config wal](https://www.postgresql.org/docs/18/runtime-config-wal.html)
+- [sql createtable](https://www.postgresql.org/docs/18/sql-createtable.html)
+- [backup](https://www.postgresql.org/docs/18/backup.html)

@@ -26,4 +26,4 @@ Node measurements can include child work and be averaged over loops. Avoid summi
 
 For a surprising plan, verify the query's result contract, inspect predicates and statistics, check parameter planning, then compare plausible alternatives. Do not start by globally disabling the chosen scan type.
 
-Sources: [Using EXPLAIN](https://www.postgresql.org/docs/17/using-explain.html), [EXPLAIN syntax](https://www.postgresql.org/docs/17/sql-explain.html).
+Sources: [Using EXPLAIN](https://www.postgresql.org/docs/18/using-explain.html), [EXPLAIN syntax](https://www.postgresql.org/docs/18/sql-explain.html).

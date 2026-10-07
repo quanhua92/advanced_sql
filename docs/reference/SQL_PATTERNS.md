@@ -43,4 +43,4 @@ The executable capstone provides `capstone.claim_one`. Use a short transaction, 
 
 Begin the complete logical transaction, read the required state, apply changes, and commit. On a retryable serialization/deadlock failure, roll back and restart the logical transaction with a bounded policy. Do not retry only the last statement while retaining stale assumptions. Keep external side effects outside retryable database work unless they have their own idempotency contract.
 
-Sources: [SELECT](https://www.postgresql.org/docs/17/sql-select.html), [LATERAL](https://www.postgresql.org/docs/17/queries-table-expressions.html), [comparisons](https://www.postgresql.org/docs/17/functions-comparison.html), [serialization failures](https://www.postgresql.org/docs/17/mvcc-serialization-failure-handling.html).
+Sources: [SELECT](https://www.postgresql.org/docs/18/sql-select.html), [LATERAL](https://www.postgresql.org/docs/18/queries-table-expressions.html), [comparisons](https://www.postgresql.org/docs/18/functions-comparison.html), [serialization failures](https://www.postgresql.org/docs/18/mvcc-serialization-failure-handling.html).

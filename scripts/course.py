@@ -58,8 +58,16 @@ def run_sql(relative: str, label: str) -> None:
         raise ValueError('Expected an existing .sql file inside this course folder.')
     relative = path.relative_to(ROOT).as_posix()
     if not relative.startswith(('sql/', 'legacy/')):
-        raise ValueError('SQL must be in the mounted sql/ or legacy/ folders.')
+        raise ValueError('SQL must be in the bundled sql/ or legacy/ folders.')
+    sync_course_files()
     execute(PSQL + ['-f', '/course/' + relative], log_name=label)
+
+
+def sync_course_files() -> None:
+    """Copy editable host sources into the container without requiring bind mounts."""
+    for name in ('sql', 'scripts', 'legacy'):
+        execute(['exec', '-T', 'postgres', 'rm', '-rf', f'/course/{name}'])
+        execute(['cp', str(ROOT / name), 'postgres:/course/'])
 
 
 def confirm(yes: bool, operation: str) -> None:
@@ -91,7 +99,8 @@ def main(argv: list[str] | None = None) -> int:
     try:
         cmd = args.command
         if cmd == 'up':
-            execute(['up', '-d', '--wait', '--wait-timeout', '600'])
+            execute(['up', '-d', '--build', '--wait', '--wait-timeout', '600'])
+            sync_course_files()
         elif cmd == 'down':
             execute(['down'])
         elif cmd == 'status':
@@ -108,8 +117,10 @@ def main(argv: list[str] | None = None) -> int:
                 raise ValueError('Only lab schemas 01 through 26 may be cleaned.')
             execute(PSQL + ['-c', f"SELECT course_meta.reset_lab('lab{args.number:02d}', false);"])
         elif cmd == 'test':
+            sync_course_files()
             execute(['exec', '-T', 'postgres', 'sh', '/course/scripts/smoke.sh'], log_name='smoke')
         elif cmd == 'concurrency-test':
+            sync_course_files()
             subprocess.run([sys.executable, str(ROOT / 'scripts/concurrency_test.py')], cwd=ROOT, check=True)
         elif cmd == 'capstone':
             print('Rebuilding only the capstone teaching schema.')
@@ -119,11 +130,13 @@ def main(argv: list[str] | None = None) -> int:
         elif cmd == 'reset':
             confirm(args.yes, 'Reset')
             execute(['down', '-v'])
-            execute(['up', '-d', '--wait', '--wait-timeout', '600'])
+            execute(['up', '-d', '--build', '--wait', '--wait-timeout', '600'])
+            sync_course_files()
         elif cmd == 'reseed':
             confirm(args.yes, 'Reseed')
             if not 10000 <= args.rows <= 5000000:
                 raise ValueError('--rows must be between 10000 and 5000000.')
+            sync_course_files()
             # Remove only known teaching schemas, including dependent capstone FKs.
             schemas = [f'lab{i:02d}' for i in range(1, 27)]
             schemas += ['capstone', 'course_concurrency']

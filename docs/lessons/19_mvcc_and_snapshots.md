@@ -1,6 +1,6 @@
 # 19. MVCC And Snapshots
 
-**Prerequisite:** the preceding lessons, especially their DoneContracts. **Environment:** PostgreSQL 17, disposable course database. **Evidence:** actual plans and result checks, not prescribed timings.
+**Prerequisite:** the preceding lessons, especially their DoneContracts. **Environment:** PostgreSQL 18, disposable course database. **Evidence:** actual plans and result checks, not prescribed timings.
 
 [Course map](../01_course_map.md) · [SQL lab](../../sql/labs/19_mvcc_and_snapshots.sql) · [Worked answers](../solutions/19_mvcc_and_snapshots.md)
 
@@ -68,8 +68,8 @@ Record your hypothesis, result, and explanation with [the experiment template](.
 
 ## Primary references
 
-- [mvcc intro](https://www.postgresql.org/docs/17/mvcc-intro.html)
-- [transaction iso](https://www.postgresql.org/docs/17/transaction-iso.html)
-- [routine vacuuming](https://www.postgresql.org/docs/17/routine-vacuuming.html)
-- [ddl system columns](https://www.postgresql.org/docs/17/ddl-system-columns.html)
-- [storage vm](https://www.postgresql.org/docs/17/storage-vm.html)
+- [mvcc intro](https://www.postgresql.org/docs/18/mvcc-intro.html)
+- [transaction iso](https://www.postgresql.org/docs/18/transaction-iso.html)
+- [routine vacuuming](https://www.postgresql.org/docs/18/routine-vacuuming.html)
+- [ddl system columns](https://www.postgresql.org/docs/18/ddl-system-columns.html)
+- [storage vm](https://www.postgresql.org/docs/18/storage-vm.html)

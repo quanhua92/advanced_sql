@@ -29,7 +29,7 @@ The SQL checks logical outcomes or demonstrates an alternative. It deliberately 
 
 ## Primary references
 
-- [transaction iso](https://www.postgresql.org/docs/17/transaction-iso.html)
-- [mvcc intro](https://www.postgresql.org/docs/17/mvcc-intro.html)
-- [explicit locking](https://www.postgresql.org/docs/17/explicit-locking.html)
-- [tutorial transactions](https://www.postgresql.org/docs/17/tutorial-transactions.html)
+- [transaction iso](https://www.postgresql.org/docs/18/transaction-iso.html)
+- [mvcc intro](https://www.postgresql.org/docs/18/mvcc-intro.html)
+- [explicit locking](https://www.postgresql.org/docs/18/explicit-locking.html)
+- [tutorial transactions](https://www.postgresql.org/docs/18/tutorial-transactions.html)

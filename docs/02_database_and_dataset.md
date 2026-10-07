@@ -38,4 +38,4 @@ python scripts/course.py reseed --rows 100000 --yes
 
 This destroys all lesson, capstone, and manual-concurrency progress but preserves the separate legacy schema. Use the default 500,000 rows for the published exercises: some predicates, IDs, and partition windows become empty on smaller seeds. A smaller seed is useful for exploration, not a guarantee that every answer-key assertion remains applicable. Running all tests at a nondefault scale is not claimed to work.
 
-Sources: [Physical page layout](https://www.postgresql.org/docs/17/storage-page-layout.html), [resource consumption](https://www.postgresql.org/docs/17/runtime-config-resource.html), [Docker image initialization](https://hub.docker.com/_/postgres).
+Sources: [Physical page layout](https://www.postgresql.org/docs/18/storage-page-layout.html), [resource consumption](https://www.postgresql.org/docs/18/runtime-config-resource.html), [Docker image initialization](https://hub.docker.com/_/postgres).

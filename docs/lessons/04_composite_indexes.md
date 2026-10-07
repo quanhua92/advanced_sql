@@ -1,6 +1,6 @@
 # 04. Composite Indexes
 
-**Prerequisite:** the preceding lessons, especially their DoneContracts. **Environment:** PostgreSQL 17, disposable course database. **Evidence:** actual plans and result checks, not prescribed timings.
+**Prerequisite:** the preceding lessons, especially their DoneContracts. **Environment:** PostgreSQL 18, disposable course database. **Evidence:** actual plans and result checks, not prescribed timings.
 
 [Course map](../01_course_map.md) · [SQL lab](../../sql/labs/04_composite_indexes.sql) · [Worked answers](../solutions/04_composite_indexes.md)
 
@@ -14,11 +14,11 @@ For a query with equality on project and status, the remaining time order is imm
 
 ## Leading equalities and the first range
 
-For PostgreSQL 17 B-trees, equality constraints on leading columns and a range on the first non-equality column bound the primary region scanned. Constraints farther right can be checked in the index and save heap visits without necessarily shrinking that entire region. This distinction is why “the condition appears in Index Cond” does not always mean it sharply narrows initial traversal.
+For PostgreSQL 18 B-trees, equality constraints on leading columns and a range on the first non-equality column bound the ordinary contiguous scan region. Constraints farther right can be checked in the index and save heap visits without necessarily shrinking that region. PostgreSQL 18 can sometimes narrow work further with skip scans: when skipped leading keys have few distinct values, it may perform repeated searches using a later-column condition. Check the actual `Index Searches` count; the planner can still prefer another path.
 
 Consider `(project_id, created_at, status)`. With a project equality and a time range, the index walks the time interval. A rare status farther right may eliminate most entries before heap access, but the index entries across that interval still matter. Swapping status before time can be better for status-specific feeds, but different for all-status chronological feeds.
 
-Do not turn the leftmost-column rule into “the index can never be used otherwise.” PostgreSQL may scan an index for another reason, including covering or cost. PostgreSQL 18 also adds skip-scan behavior discussed separately. This executable baseline deliberately targets 17.
+Do not turn the leftmost-column rule into “the index can never be used otherwise.” PostgreSQL may scan an index for another reason, including covering or cost, and PG18 may use skip scans. Neither changes the index's lexicographic order or guarantees a plan choice. The executable baseline targets PG18; [the version note](../07_postgresql17_vs18.md) compares this behavior with PG17.
 
 ## Why “most selective first” is not enough
 
@@ -68,13 +68,14 @@ Read each SQL section and predict its result before executing it. Re-running the
 
 1. Why does changing status from failed to running differ from removing the status condition?
 2. What does a predicate to the right of the first range sometimes save, even when it does not bound the scanned region?
-3. Would one all-ascending index automatically satisfy every combination of ascending and descending ordering?
+3. When could a skip scan help a suffix-only predicate, and what evidence would you inspect?
+4. Would one all-ascending index automatically satisfy every combination of ascending and descending ordering?
 
 Record your hypothesis, result, and explanation with [the experiment template](../templates/experiment.md). The [answer key](../solutions/04_composite_indexes.md) includes this lesson's DoneContract; [solution SQL](../../sql/solutions/04_composite_indexes.sql) adds executable checks or a worked alternative after the lab.
 
 ## Primary references
 
-- [indexes multicolumn](https://www.postgresql.org/docs/17/indexes-multicolumn.html)
-- [indexes ordering](https://www.postgresql.org/docs/17/indexes-ordering.html)
-- [indexes partial](https://www.postgresql.org/docs/17/indexes-partial.html)
-- [sql createindex](https://www.postgresql.org/docs/17/sql-createindex.html)
+- [indexes multicolumn](https://www.postgresql.org/docs/18/indexes-multicolumn.html)
+- [indexes ordering](https://www.postgresql.org/docs/18/indexes-ordering.html)
+- [indexes partial](https://www.postgresql.org/docs/18/indexes-partial.html)
+- [sql createindex](https://www.postgresql.org/docs/18/sql-createindex.html)

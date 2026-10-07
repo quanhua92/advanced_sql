@@ -1,6 +1,6 @@
 # 08. Ranges Text And Bitmaps
 
-**Prerequisite:** the preceding lessons, especially their DoneContracts. **Environment:** PostgreSQL 17, disposable course database. **Evidence:** actual plans and result checks, not prescribed timings.
+**Prerequisite:** the preceding lessons, especially their DoneContracts. **Environment:** PostgreSQL 18, disposable course database. **Evidence:** actual plans and result checks, not prescribed timings.
 
 [Course map](../01_course_map.md) · [SQL lab](../../sql/labs/08_ranges_text_and_bitmaps.sql) · [Worked answers](../solutions/08_ranges_text_and_bitmaps.md)
 
@@ -68,7 +68,7 @@ Record your hypothesis, result, and explanation with [the experiment template](.
 
 ## Primary references
 
-- [indexes types](https://www.postgresql.org/docs/17/indexes-types.html)
-- [indexes opclass](https://www.postgresql.org/docs/17/indexes-opclass.html)
-- [indexes bitmap scans](https://www.postgresql.org/docs/17/indexes-bitmap-scans.html)
-- [pgtrgm](https://www.postgresql.org/docs/17/pgtrgm.html)
+- [indexes types](https://www.postgresql.org/docs/18/indexes-types.html)
+- [indexes opclass](https://www.postgresql.org/docs/18/indexes-opclass.html)
+- [indexes bitmap scans](https://www.postgresql.org/docs/18/indexes-bitmap-scans.html)
+- [pgtrgm](https://www.postgresql.org/docs/18/pgtrgm.html)

@@ -1,6 +1,6 @@
 # 18. Locks And Worker Claims
 
-**Prerequisite:** the preceding lessons, especially their DoneContracts. **Environment:** PostgreSQL 17, disposable course database. **Evidence:** actual plans and result checks, not prescribed timings.
+**Prerequisite:** the preceding lessons, especially their DoneContracts. **Environment:** PostgreSQL 18, disposable course database. **Evidence:** actual plans and result checks, not prescribed timings.
 
 [Course map](../01_course_map.md) · [SQL lab](../../sql/labs/18_locks_and_worker_claims.sql) · [Worked answers](../solutions/18_locks_and_worker_claims.md)
 
@@ -81,7 +81,7 @@ Record your hypothesis, result, and explanation with [the experiment template](.
 
 ## Primary references
 
-- [explicit locking](https://www.postgresql.org/docs/17/explicit-locking.html)
-- [sql select](https://www.postgresql.org/docs/17/sql-select.html)
-- [monitoring stats](https://www.postgresql.org/docs/17/monitoring-stats.html)
-- [errcodes appendix](https://www.postgresql.org/docs/17/errcodes-appendix.html)
+- [explicit locking](https://www.postgresql.org/docs/18/explicit-locking.html)
+- [sql select](https://www.postgresql.org/docs/18/sql-select.html)
+- [monitoring stats](https://www.postgresql.org/docs/18/monitoring-stats.html)
+- [errcodes appendix](https://www.postgresql.org/docs/18/errcodes-appendix.html)

@@ -1,48 +1,67 @@
 {
-  "prepared_on": "2026-10-07",
-  "status": "PASS_STATIC_ONLY",
-  "runtime_executed": false,
-  "runtime_limitation": "Docker, PostgreSQL server, and psql were unavailable; no SQL/database or Compose runtime tests were executed.",
-  "structural_checks": {
-    "status": "PASS",
-    "checks": {
-      "manifest_paths": 94,
-      "local_markdown_links": 323,
-      "sql_include_paths": 77,
-      "python_files_parsed": 4,
-      "core_labs_with_solutions": 21,
-      "original_files_match_embedded_archive": true,
-      "compose_expected_fields_present": true,
-      "compose_yaml_parser": "Not checked by this standard-library validator",
-      "sql_syntax_and_runtime": "Not checked; requires PostgreSQL 17",
-      "files_excluding_output_and_backup_contents": 166,
-      "markdown_files": 74,
-      "sql_files": 77
-    },
-    "errors": [],
-    "runtime_executed": false,
-    "scope": "Offline structural validation only"
+  "verified_on": "2026-10-08",
+  "status": "PASS",
+  "runtime_executed": true,
+  "runtime_environment": {
+    "postgresql": "18.6",
+    "postgres_image": "postgres:18-bookworm",
+    "postgres_image_digest": "sha256:afc7e2d441324c0388fa80c3d24f733b4194a4eb7f47dd8ee2b08eb1a24a647c",
+    "docker_compose": "2.38.2",
+    "isolated_project": "advanced-sql18-review",
+    "host_port_published": false,
+    "data_volume": "postgres18_data mounted at /var/lib/postgresql",
+    "startup_and_seed": "PASS",
+    "source_sync_via_compose_cp": "PASS"
   },
-  "additional_checks": {
-    "compose_yaml_parsed_with": "PyYAML 6.0.3",
-    "compose_local_binding_and_baseline_fields": "PASS",
-    "shell_syntax_sh_n": "PASS",
-    "sql_lexical_delimiter_checks": {
-      "files": 77,
-      "status": "PASS",
-      "scope": "Quotes, dollar-quoted blocks, comments, and outer parentheses only; NOT SQL syntax validation"
-    },
-    "python_cli_unit_tests": {
+  "package_checks": {
+    "structural_validator": "PASS",
+    "markdown_links": 323,
+    "manifest_paths": 94,
+    "contents_inventory_files": 170,
+    "sql_include_paths": 77,
+    "python_files_parsed": 4,
+    "legacy_archive_match": "PASS",
+    "postgres_major_version_guard": "PASS: requires PostgreSQL 18",
+    "compose_config": "PASS",
+    "shell_syntax": "PASS",
+    "cli_unit_tests": {
       "count": 9,
-      "status": "PASS",
-      "docker_invoked": false
+      "status": "PASS"
     },
-    "legacy_original_zip_exact_match": "PASS"
+    "checksum_entries_expected": 169,
+    "checksum_status": "PASS after checksum regeneration"
   },
-  "runtime_commands_to_execute": [
-    "docker compose up -d --wait",
-    "python scripts/course.py test",
-    "python scripts/course.py concurrency-test"
+  "runtime_suites": {
+    "sql_smoke": {
+      "status": "PASS",
+      "bootstrap": "PASS",
+      "labs": 21,
+      "solutions": 21,
+      "supplements": 5,
+      "capstone_assertions": "PASS"
+    },
+    "concurrency": {
+      "status": "PASS",
+      "scenarios": [
+        "Read Committed statement snapshots",
+        "Repeatable Read snapshots",
+        "write skew",
+        "Serializable rejection with SQLSTATE 40001",
+        "SKIP LOCKED claims",
+        "deadlock detection with SQLSTATE 40P01",
+        "old-version visibility across vacuum",
+        "concurrent capstone claims"
+      ]
+    },
+    "legacy_lab": "PASS on PostgreSQL 18.6",
+    "pg18_skip_scan_demo": "PASS: status-only query used a bitmap index scan with 101 index searches",
+    "optional_crash_recovery": "NOT RUN"
+  },
+  "runtime_commands": [
+    "docker compose -p advanced-sql18-review up -d --build --wait --wait-timeout 600",
+    "COMPOSE_PROJECT_NAME=advanced-sql18-review python3 scripts/course.py test",
+    "COMPOSE_PROJECT_NAME=advanced-sql18-review python3 scripts/course.py concurrency-test",
+    "COMPOSE_PROJECT_NAME=advanced-sql18-review python3 scripts/course.py legacy"
   ],
-  "benchmark_measurements": "None; all runtime plan and performance discussions are hypotheses or documented semantics."
+  "performance_claims": "No benchmark speedups claimed; plans and timings vary by environment."
 }

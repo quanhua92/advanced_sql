@@ -29,7 +29,7 @@ The SQL checks logical outcomes or demonstrates an alternative. It deliberately 
 
 ## Primary references
 
-- [indexes ordering](https://www.postgresql.org/docs/17/indexes-ordering.html)
-- [using explain](https://www.postgresql.org/docs/17/using-explain.html)
-- [runtime config resource](https://www.postgresql.org/docs/17/runtime-config-resource.html)
-- [functions aggregate](https://www.postgresql.org/docs/17/functions-aggregate.html)
+- [indexes ordering](https://www.postgresql.org/docs/18/indexes-ordering.html)
+- [using explain](https://www.postgresql.org/docs/18/using-explain.html)
+- [runtime config resource](https://www.postgresql.org/docs/18/runtime-config-resource.html)
+- [functions aggregate](https://www.postgresql.org/docs/18/functions-aggregate.html)

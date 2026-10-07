@@ -6,6 +6,10 @@
 SELECT course_meta.reset_lab('lab04');
 CREATE INDEX runs_project_status_time ON lab04.runs
 (project_id,status,created_at DESC,id DESC);
+-- PG18 may skip across the low-cardinality project_id prefix for status-only predicates.
+-- Compare Index Searches, buffers, and the planner's chosen path.
+EXPLAIN (ANALYZE,BUFFERS,TIMING OFF)
+SELECT count(*) FROM lab04.runs WHERE status='failed';
 EXPLAIN (ANALYZE,BUFFERS,TIMING OFF)
 SELECT id,created_at,duration_ms FROM lab04.runs
 WHERE project_id=42 AND status='failed'

@@ -1,6 +1,6 @@
 # 11. Hash And Merge Joins
 
-**Prerequisite:** the preceding lessons, especially their DoneContracts. **Environment:** PostgreSQL 17, disposable course database. **Evidence:** actual plans and result checks, not prescribed timings.
+**Prerequisite:** the preceding lessons, especially their DoneContracts. **Environment:** PostgreSQL 18, disposable course database. **Evidence:** actual plans and result checks, not prescribed timings.
 
 [Course map](../01_course_map.md) · [SQL lab](../../sql/labs/11_hash_and_merge_joins.sql) · [Worked answers](../solutions/11_hash_and_merge_joins.md)
 
@@ -68,7 +68,7 @@ Record your hypothesis, result, and explanation with [the experiment template](.
 
 ## Primary references
 
-- [using explain](https://www.postgresql.org/docs/17/using-explain.html)
-- [runtime config resource](https://www.postgresql.org/docs/17/runtime-config-resource.html)
-- [planner stats](https://www.postgresql.org/docs/17/planner-stats.html)
-- [queries table expressions](https://www.postgresql.org/docs/17/queries-table-expressions.html)
+- [using explain](https://www.postgresql.org/docs/18/using-explain.html)
+- [runtime config resource](https://www.postgresql.org/docs/18/runtime-config-resource.html)
+- [planner stats](https://www.postgresql.org/docs/18/planner-stats.html)
+- [queries table expressions](https://www.postgresql.org/docs/18/queries-table-expressions.html)

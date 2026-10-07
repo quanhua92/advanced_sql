@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "baseline": "PostgreSQL 17",
+  "baseline": "PostgreSQL 18",
   "default_seed_rows": 500000,
   "lessons": [
     {

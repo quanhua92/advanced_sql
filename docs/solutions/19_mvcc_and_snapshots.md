@@ -29,8 +29,8 @@ The SQL checks logical outcomes or demonstrates an alternative. It deliberately 
 
 ## Primary references
 
-- [mvcc intro](https://www.postgresql.org/docs/17/mvcc-intro.html)
-- [transaction iso](https://www.postgresql.org/docs/17/transaction-iso.html)
-- [routine vacuuming](https://www.postgresql.org/docs/17/routine-vacuuming.html)
-- [ddl system columns](https://www.postgresql.org/docs/17/ddl-system-columns.html)
-- [storage vm](https://www.postgresql.org/docs/17/storage-vm.html)
+- [mvcc intro](https://www.postgresql.org/docs/18/mvcc-intro.html)
+- [transaction iso](https://www.postgresql.org/docs/18/transaction-iso.html)
+- [routine vacuuming](https://www.postgresql.org/docs/18/routine-vacuuming.html)
+- [ddl system columns](https://www.postgresql.org/docs/18/ddl-system-columns.html)
+- [storage vm](https://www.postgresql.org/docs/18/storage-vm.html)

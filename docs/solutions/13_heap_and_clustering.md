@@ -29,7 +29,7 @@ The SQL checks logical outcomes or demonstrates an alternative. It deliberately 
 
 ## Primary references
 
-- [sql cluster](https://www.postgresql.org/docs/17/sql-cluster.html)
-- [storage page layout](https://www.postgresql.org/docs/17/storage-page-layout.html)
-- [planner stats](https://www.postgresql.org/docs/17/planner-stats.html)
+- [sql cluster](https://www.postgresql.org/docs/18/sql-cluster.html)
+- [storage page layout](https://www.postgresql.org/docs/18/storage-page-layout.html)
+- [planner stats](https://www.postgresql.org/docs/18/planner-stats.html)
 - [innodb index types](https://dev.mysql.com/doc/refman/8.4/en/innodb-index-types.html)

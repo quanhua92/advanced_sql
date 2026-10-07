@@ -29,7 +29,7 @@ The SQL checks logical outcomes or demonstrates an alternative. It deliberately 
 
 ## Primary references
 
-- [indexes partial](https://www.postgresql.org/docs/17/indexes-partial.html)
-- [functions comparisons](https://www.postgresql.org/docs/17/functions-comparisons.html)
-- [functions comparison](https://www.postgresql.org/docs/17/functions-comparison.html)
-- [ddl constraints](https://www.postgresql.org/docs/17/ddl-constraints.html)
+- [indexes partial](https://www.postgresql.org/docs/18/indexes-partial.html)
+- [functions comparisons](https://www.postgresql.org/docs/18/functions-comparisons.html)
+- [functions comparison](https://www.postgresql.org/docs/18/functions-comparison.html)
+- [ddl constraints](https://www.postgresql.org/docs/18/ddl-constraints.html)

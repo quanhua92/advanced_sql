@@ -29,7 +29,7 @@ The SQL checks logical outcomes or demonstrates an alternative. It deliberately 
 
 ## Primary references
 
-- [ddl partitioning](https://www.postgresql.org/docs/17/ddl-partitioning.html)
-- [sql altertable](https://www.postgresql.org/docs/17/sql-altertable.html)
-- [sql createtable](https://www.postgresql.org/docs/17/sql-createtable.html)
-- [planner stats](https://www.postgresql.org/docs/17/planner-stats.html)
+- [ddl partitioning](https://www.postgresql.org/docs/18/ddl-partitioning.html)
+- [sql altertable](https://www.postgresql.org/docs/18/sql-altertable.html)
+- [sql createtable](https://www.postgresql.org/docs/18/sql-createtable.html)
+- [planner stats](https://www.postgresql.org/docs/18/planner-stats.html)

@@ -32,4 +32,4 @@ Record total execution time, buffer hits/reads, returned rows, discarded rows, s
 
 A semantic assertion can require that two pages contain the same IDs. A runtime observation can report that a sort spilled on one machine. A structural expectation can say an index makes an ordered lookup possible. A concurrency test requires overlapping transactions with a specified schedule. A recovery test requires an actual failure event and independently known durable state. Do not promote one kind of evidence into a stronger claim.
 
-Sources: [EXPLAIN](https://www.postgresql.org/docs/17/using-explain.html), [EXPLAIN command](https://www.postgresql.org/docs/17/sql-explain.html), [monitoring statistics](https://www.postgresql.org/docs/17/monitoring-stats.html).
+Sources: [EXPLAIN](https://www.postgresql.org/docs/18/using-explain.html), [EXPLAIN command](https://www.postgresql.org/docs/18/sql-explain.html), [monitoring statistics](https://www.postgresql.org/docs/18/monitoring-stats.html).

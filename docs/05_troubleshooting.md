@@ -4,9 +4,9 @@
 
 Check that Docker is installed and its engine is running. This package uses Compose v2 through `docker compose`, not the historical `docker-compose` binary. Inspect `docker compose version` and `docker compose config`. If an older installation lacks `--wait`, start with `docker compose up -d`, inspect `docker compose ps`, and wait for the service to become healthy before running SQL.
 
-## The host port is occupied
+## Connect to the database
 
-Copy `.env.example` to `.env` and choose another `POSTGRES_PORT`, such as 55433. The container still uses 5432. The helper and in-container `psql` do not depend on the host port. Keep the host binding at `127.0.0.1`, not all interfaces.
+The database has no published host port. Connect from inside the container with `docker compose exec postgres psql -X -U course -d advanced_sql`; the Python helper uses the same route. This avoids conflicts with another PostgreSQL server using port 5432.
 
 ## Health remains unhealthy
 
@@ -42,4 +42,4 @@ Verify `current_user`, `rolsuper`, and `rolbypassrls`. The default course connec
 
 Do not leave unrelated manual transactions open. Inspect `pg_stat_activity`, `pg_blocking_pids`, and the monitor script. The automated harness uses bounded statement and lock timeouts and reports unexpected errors as failures. A timeout is not a substitute for observing the intended deadlock or serialization error. Close abandoned clients and retry the setup when no experiment sessions are active.
 
-Sources: [Docker initialization](https://hub.docker.com/_/postgres), [Compose up](https://docs.docker.com/reference/cli/docker/compose/up/), [psql](https://www.postgresql.org/docs/17/app-psql.html), [RLS](https://www.postgresql.org/docs/17/ddl-rowsecurity.html).
+Sources: [Docker initialization](https://hub.docker.com/_/postgres), [Compose up](https://docs.docker.com/reference/cli/docker/compose/up/), [psql](https://www.postgresql.org/docs/18/app-psql.html), [RLS](https://www.postgresql.org/docs/18/ddl-rowsecurity.html).

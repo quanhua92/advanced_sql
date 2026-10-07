@@ -1,6 +1,6 @@
 # 14. Sorting And Aggregation
 
-**Prerequisite:** the preceding lessons, especially their DoneContracts. **Environment:** PostgreSQL 17, disposable course database. **Evidence:** actual plans and result checks, not prescribed timings.
+**Prerequisite:** the preceding lessons, especially their DoneContracts. **Environment:** PostgreSQL 18, disposable course database. **Evidence:** actual plans and result checks, not prescribed timings.
 
 [Course map](../01_course_map.md) · [SQL lab](../../sql/labs/14_sorting_and_aggregation.sql) · [Worked answers](../solutions/14_sorting_and_aggregation.md)
 
@@ -66,7 +66,7 @@ Record your hypothesis, result, and explanation with [the experiment template](.
 
 ## Primary references
 
-- [indexes ordering](https://www.postgresql.org/docs/17/indexes-ordering.html)
-- [using explain](https://www.postgresql.org/docs/17/using-explain.html)
-- [runtime config resource](https://www.postgresql.org/docs/17/runtime-config-resource.html)
-- [functions aggregate](https://www.postgresql.org/docs/17/functions-aggregate.html)
+- [indexes ordering](https://www.postgresql.org/docs/18/indexes-ordering.html)
+- [using explain](https://www.postgresql.org/docs/18/using-explain.html)
+- [runtime config resource](https://www.postgresql.org/docs/18/runtime-config-resource.html)
+- [functions aggregate](https://www.postgresql.org/docs/18/functions-aggregate.html)

@@ -20,7 +20,7 @@ For the platform, JSONB metadata search and append-oriented event-history filter
 
 **DoneContract:** justify the indexed representation, supported operators, and maintenance assumptions for each workload.
 
-References: [BRIN](https://www.postgresql.org/docs/17/brin.html), [JSONB indexing](https://www.postgresql.org/docs/17/datatype-json.html), [GIN](https://www.postgresql.org/docs/17/gin.html).
+References: [BRIN](https://www.postgresql.org/docs/18/brin.html), [JSONB indexing](https://www.postgresql.org/docs/18/datatype-json.html), [GIN](https://www.postgresql.org/docs/18/gin.html).
 
 ## Run
 

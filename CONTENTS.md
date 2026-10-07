@@ -1,6 +1,6 @@
 # Package contents
 
-This inventory describes the supplied local material. User-generated logs and backups are not pre-populated. The Docker image is fetched separately.
+This inventory describes the supplied local material. User-generated logs and backups are not pre-populated. Docker Compose builds the course image from the separately fetched PostgreSQL base image.
 
 ## Reading and execution order
 
@@ -8,6 +8,7 @@ This inventory describes the supplied local material. User-generated logs and ba
 
 ## Files
 
+- `.dockerignore`
 - `.env.example`
 - `.gitattributes`
 - `.gitignore`
@@ -17,6 +18,7 @@ This inventory describes the supplied local material. User-generated logs and ba
 - `VALIDATION.md`
 - `backups/.gitkeep`
 - `course_manifest.json`
+- `Dockerfile`
 - `docker/init/10-course.sql`
 - `docker-compose.yml`
 - `docs/00_start_here.md`

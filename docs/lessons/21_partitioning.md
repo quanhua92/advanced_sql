@@ -1,6 +1,6 @@
 # 21. Partitioning
 
-**Prerequisite:** the preceding lessons, especially their DoneContracts. **Environment:** PostgreSQL 17, disposable course database. **Evidence:** actual plans and result checks, not prescribed timings.
+**Prerequisite:** the preceding lessons, especially their DoneContracts. **Environment:** PostgreSQL 18, disposable course database. **Evidence:** actual plans and result checks, not prescribed timings.
 
 [Course map](../01_course_map.md) · [SQL lab](../../sql/labs/21_partitioning.sql) · [Worked answers](../solutions/21_partitioning.md)
 
@@ -68,7 +68,7 @@ Record your hypothesis, result, and explanation with [the experiment template](.
 
 ## Primary references
 
-- [ddl partitioning](https://www.postgresql.org/docs/17/ddl-partitioning.html)
-- [sql altertable](https://www.postgresql.org/docs/17/sql-altertable.html)
-- [sql createtable](https://www.postgresql.org/docs/17/sql-createtable.html)
-- [planner stats](https://www.postgresql.org/docs/17/planner-stats.html)
+- [ddl partitioning](https://www.postgresql.org/docs/18/ddl-partitioning.html)
+- [sql altertable](https://www.postgresql.org/docs/18/sql-altertable.html)
+- [sql createtable](https://www.postgresql.org/docs/18/sql-createtable.html)
+- [planner stats](https://www.postgresql.org/docs/18/planner-stats.html)

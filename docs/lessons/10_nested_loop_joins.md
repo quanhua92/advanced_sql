@@ -1,6 +1,6 @@
 # 10. Nested Loop Joins
 
-**Prerequisite:** the preceding lessons, especially their DoneContracts. **Environment:** PostgreSQL 17, disposable course database. **Evidence:** actual plans and result checks, not prescribed timings.
+**Prerequisite:** the preceding lessons, especially their DoneContracts. **Environment:** PostgreSQL 18, disposable course database. **Evidence:** actual plans and result checks, not prescribed timings.
 
 [Course map](../01_course_map.md) · [SQL lab](../../sql/labs/10_nested_loop_joins.sql) · [Worked answers](../solutions/10_nested_loop_joins.md)
 
@@ -79,7 +79,7 @@ Record your hypothesis, result, and explanation with [the experiment template](.
 
 ## Primary references
 
-- [queries table expressions](https://www.postgresql.org/docs/17/queries-table-expressions.html)
-- [using explain](https://www.postgresql.org/docs/17/using-explain.html)
-- [indexes multicolumn](https://www.postgresql.org/docs/17/indexes-multicolumn.html)
-- [sql select](https://www.postgresql.org/docs/17/sql-select.html)
+- [queries table expressions](https://www.postgresql.org/docs/18/queries-table-expressions.html)
+- [using explain](https://www.postgresql.org/docs/18/using-explain.html)
+- [indexes multicolumn](https://www.postgresql.org/docs/18/indexes-multicolumn.html)
+- [sql select](https://www.postgresql.org/docs/18/sql-select.html)

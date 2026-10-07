@@ -2,9 +2,9 @@
 
 ## Storage and lifecycle
 
-The named volume holds database data; bind-mounted `sql`, `scripts`, and `legacy` folders are read-only inside the container. `outputs` and `backups` are host folders written by the optional Python helper. `docker compose down` preserves the named volume. `docker compose down -v` deletes it. This project deliberately fixes a Compose project name, so a second extracted copy is not automatically a separate installation.
+The named volume holds database data. The local PostgreSQL image contains the initial `sql`, `scripts`, and `legacy` files; the Python helper copies the current host folders into the running container before each lesson or test command. Direct `docker compose exec` commands use the image copy. `outputs` and `backups` are host folders written by the optional Python helper. `docker compose down` preserves the named volume. `docker compose down -v` deletes it. This project deliberately fixes a Compose project name, so a second extracted copy is not automatically a separate installation.
 
-Keep one active copy of the project unless you deliberately understand Compose project names, ports, and volumes. Do not connect these scripts to an application database. The session guard checks the database name, major version, and installation marker, but a guard is not a substitute for maintaining a separate environment.
+Keep one active copy of the project unless you deliberately understand Compose project names and volumes. Do not connect these scripts to an application database. The session guard checks the database name, major version, and installation marker, but a guard is not a substitute for maintaining a separate environment.
 
 Measure current size:
 
@@ -61,4 +61,4 @@ Reconnect and inspect `lab20.durability_marker` and the logged/unlogged tables b
 
 This tests process-crash recovery on your current storage stack. It does not simulate every power-loss, torn-write, hardware-cache, filesystem, or backup-loss failure. Do not disable `fsync` or `full_page_writes` to obtain an attractive benchmark. A WAL mechanism is not a backup strategy.
 
-Sources: [Backup](https://www.postgresql.org/docs/17/backup.html), [pg_dump](https://www.postgresql.org/docs/17/app-pgdump.html), [pg_restore](https://www.postgresql.org/docs/17/app-pgrestore.html), [unlogged tables](https://www.postgresql.org/docs/17/sql-createtable.html), [WAL reliability](https://www.postgresql.org/docs/17/wal-reliability.html).
+Sources: [Backup](https://www.postgresql.org/docs/18/backup.html), [pg_dump](https://www.postgresql.org/docs/18/app-pgdump.html), [pg_restore](https://www.postgresql.org/docs/18/app-pgrestore.html), [unlogged tables](https://www.postgresql.org/docs/18/sql-createtable.html), [WAL reliability](https://www.postgresql.org/docs/18/wal-reliability.html).

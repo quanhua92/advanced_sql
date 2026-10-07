@@ -1,0 +1,20 @@
+# Local Compose settings and secrets
+.env
+.env.*
+!.env.example
+docker-compose.override.yml
+
+# Generated run logs and database dumps
+outputs/*
+!outputs/.gitkeep
+backups/*
+!backups/.gitkeep
+
+# Python caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+# macOS metadata
+.DS_Store

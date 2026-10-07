@@ -46,6 +46,10 @@ def validate() -> dict:
             require(target.exists(), f'Broken link: {path.relative_to(ROOT)} -> {destination}')
             links += 1
     checks['local_markdown_links'] = links
+    inventory = re.findall(r'^- `([^`]+)`$', (ROOT / 'CONTENTS.md').read_text(encoding='utf-8'), re.MULTILINE)
+    for relative in inventory:
+        require((ROOT / relative).is_file(), f'Missing file from CONTENTS.md inventory: {relative}')
+    checks['contents_inventory_files'] = len(inventory)
     includes = 0
     for path in ROOT.rglob('*.sql'):
         text = path.read_text(encoding='utf-8')
@@ -80,13 +84,24 @@ def validate() -> dict:
                     f'Legacy file differs from original archive: {entry}')
     checks['original_files_match_embedded_archive'] = True
     compose = (ROOT / 'docker-compose.yml').read_text()
-    for token in ('127.0.0.1:', 'postgres:17-bookworm', '/var/lib/postgresql/data',
+    for token in ('postgres:18-bookworm', 'postgres18_data:/var/lib/postgresql', 'build:',
                   'healthcheck:', 'course_meta.installation', 'shared_preload_libraries=pg_stat_statements'):
         require(token in compose, f'Compose missing expected safety/baseline field: {token}')
+    require('ports:' not in compose, 'Compose should not publish a host database port; use docker compose exec')
+    session = (ROOT / 'sql/lib/session.sql').read_text()
+    require("server_version_num')::integer/10000<>18" in session,
+            'SQL session guard must require PostgreSQL 18')
+    checks['postgres_major_version_guard'] = True
+    dockerfile = ROOT / 'Dockerfile'
+    require(dockerfile.is_file(), 'Missing Dockerfile used to bundle course files into the PostgreSQL image')
+    if dockerfile.is_file():
+        for token in ('COPY docker/init/', 'COPY sql/', 'COPY scripts/', 'COPY legacy/'):
+            require(token in dockerfile.read_text(), f'Dockerfile missing required course files: {token}')
     checks['compose_expected_fields_present'] = True
     checks['compose_yaml_parser'] = 'Not checked by this standard-library validator'
-    checks['sql_syntax_and_runtime'] = 'Not checked; requires PostgreSQL 17'
-    files = [p for p in ROOT.rglob('*') if p.is_file() and '__pycache__' not in p.parts
+    checks['sql_syntax_and_runtime'] = 'Not checked; requires PostgreSQL 18'
+    files = [p for p in ROOT.rglob('*') if p.is_file() and '.git' not in p.parts
+             and '__pycache__' not in p.parts
              and not p.relative_to(ROOT).as_posix().startswith(('outputs/', 'backups/'))]
     checks['files_excluding_output_and_backup_contents'] = len(files)
     checks['markdown_files'] = len(list(ROOT.rglob('*.md')))

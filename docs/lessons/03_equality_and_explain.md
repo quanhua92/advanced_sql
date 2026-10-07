@@ -1,6 +1,6 @@
 # 03. Equality And Explain
 
-**Prerequisite:** the preceding lessons, especially their DoneContracts. **Environment:** PostgreSQL 17, disposable course database. **Evidence:** actual plans and result checks, not prescribed timings.
+**Prerequisite:** the preceding lessons, especially their DoneContracts. **Environment:** PostgreSQL 18, disposable course database. **Evidence:** actual plans and result checks, not prescribed timings.
 
 [Course map](../01_course_map.md) · [SQL lab](../../sql/labs/03_equality_and_explain.sql) · [Worked answers](../solutions/03_equality_and_explain.md)
 
@@ -29,6 +29,8 @@ The lab first retrieves a known primary-key ID. It then retrieves a project befo
 ## A useful plan-reading procedure
 
 First state the query's required result and cardinality. Then identify the selected scan and any sort, join, or aggregate. Compare estimated and observed cardinalities at the earliest substantial divergence. Next inspect repetition, buffers, temporary I/O, and timing. Finally connect the candidate optimization to one observed source of work.
+
+PostgreSQL 18 also reports `Index Searches` for index scan nodes. Multiple searches can come from repeated join probes, an `IN` condition, or a B-tree skip scan; interpret the count alongside the node's condition and loop count.
 
 For automated collection, JSON plans are easier to traverse than a screenshot. Preserve the full plan with server settings, schema/index definitions, row distribution, and the exact parameter values. A stripped screenshot often omits the parameter that caused the problem.
 
@@ -64,7 +66,7 @@ Record your hypothesis, result, and explanation with [the experiment template](.
 
 ## Primary references
 
-- [using explain](https://www.postgresql.org/docs/17/using-explain.html)
-- [sql explain](https://www.postgresql.org/docs/17/sql-explain.html)
-- [planner stats](https://www.postgresql.org/docs/17/planner-stats.html)
-- [monitoring stats](https://www.postgresql.org/docs/17/monitoring-stats.html)
+- [using explain](https://www.postgresql.org/docs/18/using-explain.html)
+- [sql explain](https://www.postgresql.org/docs/18/sql-explain.html)
+- [planner stats](https://www.postgresql.org/docs/18/planner-stats.html)
+- [monitoring stats](https://www.postgresql.org/docs/18/monitoring-stats.html)

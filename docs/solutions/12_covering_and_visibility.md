@@ -29,7 +29,7 @@ The SQL checks logical outcomes or demonstrates an alternative. It deliberately 
 
 ## Primary references
 
-- [indexes index only scans](https://www.postgresql.org/docs/17/indexes-index-only-scans.html)
-- [pgvisibility](https://www.postgresql.org/docs/17/pgvisibility.html)
-- [storage vm](https://www.postgresql.org/docs/17/storage-vm.html)
-- [storage hot](https://www.postgresql.org/docs/17/storage-hot.html)
+- [indexes index only scans](https://www.postgresql.org/docs/18/indexes-index-only-scans.html)
+- [pgvisibility](https://www.postgresql.org/docs/18/pgvisibility.html)
+- [storage vm](https://www.postgresql.org/docs/18/storage-vm.html)
+- [storage hot](https://www.postgresql.org/docs/18/storage-hot.html)

@@ -1,6 +1,6 @@
 # 07. Parameters And Plan Cache
 
-**Prerequisite:** the preceding lessons, especially their DoneContracts. **Environment:** PostgreSQL 17, disposable course database. **Evidence:** actual plans and result checks, not prescribed timings.
+**Prerequisite:** the preceding lessons, especially their DoneContracts. **Environment:** PostgreSQL 18, disposable course database. **Evidence:** actual plans and result checks, not prescribed timings.
 
 [Course map](../01_course_map.md) · [SQL lab](../../sql/labs/07_parameters_and_plan_cache.sql) · [Worked answers](../solutions/07_parameters_and_plan_cache.md)
 
@@ -66,7 +66,7 @@ Record your hypothesis, result, and explanation with [the experiment template](.
 
 ## Primary references
 
-- [sql prepare](https://www.postgresql.org/docs/17/sql-prepare.html)
-- [runtime config query](https://www.postgresql.org/docs/17/runtime-config-query.html)
-- [protocol flow](https://www.postgresql.org/docs/17/protocol-flow.html)
-- [indexes partial](https://www.postgresql.org/docs/17/indexes-partial.html)
+- [sql prepare](https://www.postgresql.org/docs/18/sql-prepare.html)
+- [runtime config query](https://www.postgresql.org/docs/18/runtime-config-query.html)
+- [protocol flow](https://www.postgresql.org/docs/18/protocol-flow.html)
+- [indexes partial](https://www.postgresql.org/docs/18/indexes-partial.html)
