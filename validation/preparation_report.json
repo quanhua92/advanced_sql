@@ -1,0 +1,48 @@
+{
+  "prepared_on": "2026-10-07",
+  "status": "PASS_STATIC_ONLY",
+  "runtime_executed": false,
+  "runtime_limitation": "Docker, PostgreSQL server, and psql were unavailable; no SQL/database or Compose runtime tests were executed.",
+  "structural_checks": {
+    "status": "PASS",
+    "checks": {
+      "manifest_paths": 94,
+      "local_markdown_links": 323,
+      "sql_include_paths": 77,
+      "python_files_parsed": 4,
+      "core_labs_with_solutions": 21,
+      "original_files_match_embedded_archive": true,
+      "compose_expected_fields_present": true,
+      "compose_yaml_parser": "Not checked by this standard-library validator",
+      "sql_syntax_and_runtime": "Not checked; requires PostgreSQL 17",
+      "files_excluding_output_and_backup_contents": 166,
+      "markdown_files": 74,
+      "sql_files": 77
+    },
+    "errors": [],
+    "runtime_executed": false,
+    "scope": "Offline structural validation only"
+  },
+  "additional_checks": {
+    "compose_yaml_parsed_with": "PyYAML 6.0.3",
+    "compose_local_binding_and_baseline_fields": "PASS",
+    "shell_syntax_sh_n": "PASS",
+    "sql_lexical_delimiter_checks": {
+      "files": 77,
+      "status": "PASS",
+      "scope": "Quotes, dollar-quoted blocks, comments, and outer parentheses only; NOT SQL syntax validation"
+    },
+    "python_cli_unit_tests": {
+      "count": 9,
+      "status": "PASS",
+      "docker_invoked": false
+    },
+    "legacy_original_zip_exact_match": "PASS"
+  },
+  "runtime_commands_to_execute": [
+    "docker compose up -d --wait",
+    "python scripts/course.py test",
+    "python scripts/course.py concurrency-test"
+  ],
+  "benchmark_measurements": "None; all runtime plan and performance discussions are hypotheses or documented semantics."
+}

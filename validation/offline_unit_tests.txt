@@ -1,0 +1,17 @@
+test_bonus_resolution (test_course_cli.CourseCliTests.test_bonus_resolution) ... ok
+test_clean_schema_range_guard (test_course_cli.CourseCliTests.test_clean_schema_range_guard) ... ERROR: Only lab schemas 01 through 26 may be cleaned.
+ok
+test_down_preserves_volume_by_default (test_course_cli.CourseCliTests.test_down_preserves_volume_by_default) ... ok
+test_invalid_seed_rejected_before_docker (test_course_cli.CourseCliTests.test_invalid_seed_rejected_before_docker) ... ERROR: --rows must be between 10000 and 5000000.
+ok
+test_manifest_lesson_resolution (test_course_cli.CourseCliTests.test_manifest_lesson_resolution) ... ok
+test_reset_requires_explicit_yes (test_course_cli.CourseCliTests.test_reset_requires_explicit_yes) ... ERROR: Reset changes or deletes course data. Read the operating guide, then add --yes.
+ok
+test_solution_maps_to_packaged_file (test_course_cli.CourseCliTests.test_solution_maps_to_packaged_file) ... ok
+test_sql_path_escape_rejected (test_course_cli.CourseCliTests.test_sql_path_escape_rejected) ... ok
+test_unknown_lesson_rejected (test_course_cli.CourseCliTests.test_unknown_lesson_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.008s
+
+OK

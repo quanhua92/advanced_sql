@@ -1,0 +1,55 @@
+name: advanced-sql-course
+services:
+  postgres:
+    image: ${POSTGRES_IMAGE:-postgres:17-bookworm}
+    environment:
+      POSTGRES_USER: course
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-course_local_only}
+      POSTGRES_DB: advanced_sql
+      POSTGRES_INITDB_ARGS: "--encoding=UTF8 --locale=C --data-checksums"
+      TZ: UTC
+      PGTZ: UTC
+    ports:
+      - "127.0.0.1:${POSTGRES_PORT:-55432}:5432"
+    shm_size: "256mb"
+    command:
+      - postgres
+      - -c
+      - shared_preload_libraries=pg_stat_statements
+      - -c
+      - shared_buffers=128MB
+      - -c
+      - work_mem=8MB
+      - -c
+      - maintenance_work_mem=128MB
+      - -c
+      - max_connections=50
+      - -c
+      - track_io_timing=on
+      - -c
+      - compute_query_id=on
+      - -c
+      - log_lock_waits=on
+      - -c
+      - deadlock_timeout=500ms
+      - -c
+      - timezone=UTC
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./docker/init:/docker-entrypoint-initdb.d:ro
+      - ./sql:/course/sql:ro
+      - ./scripts:/course/scripts:ro
+      - ./legacy:/course/legacy:ro
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - >-
+          pg_isready -h 127.0.0.1 -U course -d advanced_sql &&
+          PGPASSWORD="$$POSTGRES_PASSWORD" psql -h 127.0.0.1 -U course -d advanced_sql
+          -tAc 'SELECT ready FROM course_meta.installation WHERE id = 1' | grep -qx t
+      interval: 5s
+      timeout: 5s
+      retries: 60
+      start_period: 15s
+volumes:
+  postgres_data:

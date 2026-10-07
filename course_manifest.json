@@ -1,0 +1,207 @@
+{
+  "version": "1.0.0",
+  "baseline": "PostgreSQL 17",
+  "default_seed_rows": 500000,
+  "lessons": [
+    {
+      "number": 1,
+      "slug": "pages_and_btrees",
+      "doc": "docs/lessons/01_pages_and_btrees.md",
+      "lab": "sql/labs/01_pages_and_btrees.sql",
+      "solution_sql": "sql/solutions/01_pages_and_btrees.sql",
+      "solution_doc": "docs/solutions/01_pages_and_btrees.md"
+    },
+    {
+      "number": 2,
+      "slug": "index_economics",
+      "doc": "docs/lessons/02_index_economics.md",
+      "lab": "sql/labs/02_index_economics.sql",
+      "solution_sql": "sql/solutions/02_index_economics.sql",
+      "solution_doc": "docs/solutions/02_index_economics.md"
+    },
+    {
+      "number": 3,
+      "slug": "equality_and_explain",
+      "doc": "docs/lessons/03_equality_and_explain.md",
+      "lab": "sql/labs/03_equality_and_explain.sql",
+      "solution_sql": "sql/solutions/03_equality_and_explain.sql",
+      "solution_doc": "docs/solutions/03_equality_and_explain.md"
+    },
+    {
+      "number": 4,
+      "slug": "composite_indexes",
+      "doc": "docs/lessons/04_composite_indexes.md",
+      "lab": "sql/labs/04_composite_indexes.sql",
+      "solution_sql": "sql/solutions/04_composite_indexes.sql",
+      "solution_doc": "docs/solutions/04_composite_indexes.md"
+    },
+    {
+      "number": 5,
+      "slug": "scan_strategies",
+      "doc": "docs/lessons/05_scan_strategies.md",
+      "lab": "sql/labs/05_scan_strategies.sql",
+      "solution_sql": "sql/solutions/05_scan_strategies.sql",
+      "solution_doc": "docs/solutions/05_scan_strategies.md"
+    },
+    {
+      "number": 6,
+      "slug": "expressions_and_predicates",
+      "doc": "docs/lessons/06_expressions_and_predicates.md",
+      "lab": "sql/labs/06_expressions_and_predicates.sql",
+      "solution_sql": "sql/solutions/06_expressions_and_predicates.sql",
+      "solution_doc": "docs/solutions/06_expressions_and_predicates.md"
+    },
+    {
+      "number": 7,
+      "slug": "parameters_and_plan_cache",
+      "doc": "docs/lessons/07_parameters_and_plan_cache.md",
+      "lab": "sql/labs/07_parameters_and_plan_cache.sql",
+      "solution_sql": "sql/solutions/07_parameters_and_plan_cache.sql",
+      "solution_doc": "docs/solutions/07_parameters_and_plan_cache.md"
+    },
+    {
+      "number": 8,
+      "slug": "ranges_text_and_bitmaps",
+      "doc": "docs/lessons/08_ranges_text_and_bitmaps.md",
+      "lab": "sql/labs/08_ranges_text_and_bitmaps.sql",
+      "solution_sql": "sql/solutions/08_ranges_text_and_bitmaps.sql",
+      "solution_doc": "docs/solutions/08_ranges_text_and_bitmaps.md"
+    },
+    {
+      "number": 9,
+      "slug": "partial_indexes_and_null",
+      "doc": "docs/lessons/09_partial_indexes_and_null.md",
+      "lab": "sql/labs/09_partial_indexes_and_null.sql",
+      "solution_sql": "sql/solutions/09_partial_indexes_and_null.sql",
+      "solution_doc": "docs/solutions/09_partial_indexes_and_null.md"
+    },
+    {
+      "number": 10,
+      "slug": "nested_loop_joins",
+      "doc": "docs/lessons/10_nested_loop_joins.md",
+      "lab": "sql/labs/10_nested_loop_joins.sql",
+      "solution_sql": "sql/solutions/10_nested_loop_joins.sql",
+      "solution_doc": "docs/solutions/10_nested_loop_joins.md"
+    },
+    {
+      "number": 11,
+      "slug": "hash_and_merge_joins",
+      "doc": "docs/lessons/11_hash_and_merge_joins.md",
+      "lab": "sql/labs/11_hash_and_merge_joins.sql",
+      "solution_sql": "sql/solutions/11_hash_and_merge_joins.sql",
+      "solution_doc": "docs/solutions/11_hash_and_merge_joins.md"
+    },
+    {
+      "number": 12,
+      "slug": "covering_and_visibility",
+      "doc": "docs/lessons/12_covering_and_visibility.md",
+      "lab": "sql/labs/12_covering_and_visibility.sql",
+      "solution_sql": "sql/solutions/12_covering_and_visibility.sql",
+      "solution_doc": "docs/solutions/12_covering_and_visibility.md"
+    },
+    {
+      "number": 13,
+      "slug": "heap_and_clustering",
+      "doc": "docs/lessons/13_heap_and_clustering.md",
+      "lab": "sql/labs/13_heap_and_clustering.sql",
+      "solution_sql": "sql/solutions/13_heap_and_clustering.sql",
+      "solution_doc": "docs/solutions/13_heap_and_clustering.md"
+    },
+    {
+      "number": 14,
+      "slug": "sorting_and_aggregation",
+      "doc": "docs/lessons/14_sorting_and_aggregation.md",
+      "lab": "sql/labs/14_sorting_and_aggregation.sql",
+      "solution_sql": "sql/solutions/14_sorting_and_aggregation.sql",
+      "solution_doc": "docs/solutions/14_sorting_and_aggregation.md"
+    },
+    {
+      "number": 15,
+      "slug": "pagination_and_windows",
+      "doc": "docs/lessons/15_pagination_and_windows.md",
+      "lab": "sql/labs/15_pagination_and_windows.sql",
+      "solution_sql": "sql/solutions/15_pagination_and_windows.sql",
+      "solution_doc": "docs/solutions/15_pagination_and_windows.md"
+    },
+    {
+      "number": 16,
+      "slug": "writes_hot_and_vacuum",
+      "doc": "docs/lessons/16_writes_hot_and_vacuum.md",
+      "lab": "sql/labs/16_writes_hot_and_vacuum.sql",
+      "solution_sql": "sql/solutions/16_writes_hot_and_vacuum.sql",
+      "solution_doc": "docs/solutions/16_writes_hot_and_vacuum.md"
+    },
+    {
+      "number": 17,
+      "slug": "transactions_and_isolation",
+      "doc": "docs/lessons/17_transactions_and_isolation.md",
+      "lab": "sql/labs/17_transactions_and_isolation.sql",
+      "solution_sql": "sql/solutions/17_transactions_and_isolation.sql",
+      "solution_doc": "docs/solutions/17_transactions_and_isolation.md"
+    },
+    {
+      "number": 18,
+      "slug": "locks_and_worker_claims",
+      "doc": "docs/lessons/18_locks_and_worker_claims.md",
+      "lab": "sql/labs/18_locks_and_worker_claims.sql",
+      "solution_sql": "sql/solutions/18_locks_and_worker_claims.sql",
+      "solution_doc": "docs/solutions/18_locks_and_worker_claims.md"
+    },
+    {
+      "number": 19,
+      "slug": "mvcc_and_snapshots",
+      "doc": "docs/lessons/19_mvcc_and_snapshots.md",
+      "lab": "sql/labs/19_mvcc_and_snapshots.sql",
+      "solution_sql": "sql/solutions/19_mvcc_and_snapshots.sql",
+      "solution_doc": "docs/solutions/19_mvcc_and_snapshots.md"
+    },
+    {
+      "number": 20,
+      "slug": "wal_and_recovery",
+      "doc": "docs/lessons/20_wal_and_recovery.md",
+      "lab": "sql/labs/20_wal_and_recovery.sql",
+      "solution_sql": "sql/solutions/20_wal_and_recovery.sql",
+      "solution_doc": "docs/solutions/20_wal_and_recovery.md"
+    },
+    {
+      "number": 21,
+      "slug": "partitioning",
+      "doc": "docs/lessons/21_partitioning.md",
+      "lab": "sql/labs/21_partitioning.sql",
+      "solution_sql": "sql/solutions/21_partitioning.sql",
+      "solution_doc": "docs/solutions/21_partitioning.md"
+    }
+  ],
+  "extras": [
+    {
+      "number": 22,
+      "slug": "statistics_and_skew",
+      "lab": "sql/extras/22_statistics_and_skew.sql",
+      "doc": "docs/extras/22_statistics_and_skew.md"
+    },
+    {
+      "number": 23,
+      "slug": "monitoring_and_waits",
+      "lab": "sql/extras/23_monitoring_and_waits.sql",
+      "doc": "docs/extras/23_monitoring_and_waits.md"
+    },
+    {
+      "number": 24,
+      "slug": "gin_and_brin",
+      "lab": "sql/extras/24_gin_and_brin.sql",
+      "doc": "docs/extras/24_gin_and_brin.md"
+    },
+    {
+      "number": 25,
+      "slug": "safe_schema_changes",
+      "lab": "sql/extras/25_safe_schema_changes.sql",
+      "doc": "docs/extras/25_safe_schema_changes.md"
+    },
+    {
+      "number": 26,
+      "slug": "row_level_security",
+      "lab": "sql/extras/26_row_level_security.sql",
+      "doc": "docs/extras/26_row_level_security.md"
+    }
+  ]
+}
